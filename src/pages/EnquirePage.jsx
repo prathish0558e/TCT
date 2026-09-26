@@ -185,7 +185,7 @@ export default function EnquirePage() {
                     Shakthi Nagar, Near ICICI Bank Ganapathy, Coimbatore - 641006.
                   </li>
                   <li>
-                    <i className="bi bi-clock-fill" /> Mon – Sat · 10 AM – 7 PM
+                    <i className="bi bi-clock-fill" /> Mon – Sat · 10 AM – 6 PM
                   </li>
                 </ul>
               </div>

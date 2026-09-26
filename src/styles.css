@@ -138,15 +138,21 @@ body {
 
 /* ---------- Hero ---------- */
 .tct-hero {
-  background: #0a3430;
+  min-height: 92vh;
+  background:
+    radial-gradient(ellipse at 75% 20%, rgba(185, 138, 47, 0.28), transparent 55%),
+    radial-gradient(ellipse at 15% 85%, rgba(185, 138, 47, 0.16), transparent 50%),
+    linear-gradient(160deg, #211d17 0%, #17140f 60%, #1d1a15 100%);
   position: relative;
   overflow: hidden;
 }
 
-.tct-hero-banner {
-  display: block;
-  width: 100%;
-  height: auto;
+.tct-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(231, 211, 166, 0.22);
+  pointer-events: none;
 }
 
 .tct-hero-title {
@@ -899,6 +905,305 @@ body {
   color: var(--tct-gold-soft);
 }
 
+/* ============================================================
+   PREMIUM MOTION LAYER — preloader, reveals, tilt, shine, page
+   transitions. Respects prefers-reduced-motion globally.
+   ============================================================ */
+
+/* ---------- Page enter ---------- */
+.page-enter {
+  animation: tct-page-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes tct-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Preloader ---------- */
+.tct-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(185, 138, 47, 0.2), transparent 55%),
+    linear-gradient(160deg, #1d1a15, #14110c);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tct-preloader.is-leaving {
+  opacity: 0;
+  transform: scale(1.06);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s 0.7s;
+}
+
+.tct-preloader__glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(185, 138, 47, 0.22), transparent 65%);
+  animation: tct-glow-drift 6s ease-in-out infinite alternate;
+}
+
+@keyframes tct-glow-drift {
+  from {
+    transform: translate(-40px, -20px) scale(0.9);
+  }
+  to {
+    transform: translate(40px, 20px) scale(1.15);
+  }
+}
+
+.tct-preloader__inner {
+  position: relative;
+  text-align: center;
+}
+
+.tct-preloader__logo-wrap {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin: 0 auto 1.4rem;
+}
+
+.tct-preloader__logo {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tct-preloader__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--tct-gold);
+  border-right-color: rgba(231, 211, 166, 0.5);
+  animation: tct-spin 1.15s linear infinite;
+}
+
+.tct-preloader__ring--2 {
+  inset: -12px;
+  border-top-color: rgba(231, 211, 166, 0.7);
+  border-right-color: transparent;
+  animation: tct-spin 1.9s linear infinite reverse;
+}
+
+@keyframes tct-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tct-preloader__brand {
+  font-family: var(--tct-serif);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.tct-preloader__brand em {
+  font-style: italic;
+  background: linear-gradient(120deg, #efd9a0, var(--tct-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tct-preloader__tag {
+  color: rgba(244, 239, 228, 0.55);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-top: 0.5rem;
+}
+
+.tct-preloader__bar {
+  width: min(320px, 70vw);
+  height: 3px;
+  margin: 1.6rem auto 0.6rem;
+  background: rgba(231, 211, 166, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.tct-preloader__bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--tct-gold), #efd9a0);
+  border-radius: 999px;
+  transition: width 0.18s ease;
+  box-shadow: 0 0 12px rgba(231, 211, 166, 0.6);
+}
+
+.tct-preloader__pct {
+  color: rgba(244, 239, 228, 0.45);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+/* ---------- Tilt cards ---------- */
+.tct-tilt {
+  perspective: 900px;
+  height: 100%;
+}
+
+.tct-tilt__inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.tct-tilt__glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 245, 220, 0.16),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tct-tilt:hover .tct-tilt__glare {
+  opacity: 1;
+}
+
+/* ---------- Reveal ---------- */
+.tct-reveal {
+  opacity: 0;
+  transform: translateY(var(--reveal-y, 36px));
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.tct-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Card hover polish ---------- */
+.tct-price-card,
+.tct-combo-featured {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  will-change: transform;
+  height: 100%;
+}
+
+.tct-price-card:hover,
+.tct-combo-featured:hover {
+  border-color: var(--tct-gold);
+  box-shadow: 0 26px 60px rgba(60, 48, 20, 0.18);
+}
+
+/* ---------- Shine sweep buttons ---------- */
+.tct-btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.tct-btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.tct-btn-shine:hover::after {
+  left: 130%;
+}
+
+/* ---------- Hero logo float + sheen (premium) ---------- */
+.tct-hero-logo {
+  animation: tct-float 7s ease-in-out infinite;
+  transition: box-shadow 0.4s ease;
+}
+
+.tct-hero-logo-frame {
+  animation: tct-frame-pulse 7s ease-in-out infinite;
+}
+
+@keyframes tct-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1.5deg);
+  }
+}
+
+@keyframes tct-frame-pulse {
+  0%,
+  100% {
+    border-color: rgba(231, 211, 166, 0.4);
+    box-shadow: 0 0 0 0 rgba(231, 211, 166, 0);
+  }
+  50% {
+    border-color: rgba(231, 211, 166, 0.75);
+    box-shadow: 0 0 34px 4px rgba(231, 211, 166, 0.18);
+  }
+}
+
+.tct-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(231, 211, 166, 0.09), transparent 45%),
+    radial-gradient(ellipse at 12% 88%, rgba(185, 138, 47, 0.1), transparent 50%);
+  animation: tct-aurora 14s ease-in-out infinite alternate;
+}
+
+@keyframes tct-aurora {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- End premium motion layer ---------- */
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 991px) {
   .tct-navbar .navbar-collapse {
@@ -909,7 +1214,7 @@ body {
   }
 
   .tct-hero {
-    min-height: 0;
+    min-height: 78vh;
   }
 
   .tct-hero-title {

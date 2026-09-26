@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const socials = [
+    {
+      icon: "bi-instagram",
+      label: "Instagram",
+      href: "https://instagram.com/tct_fashion_hub?stkn=dmRicXg3bTZnaXJt",
+    },
+    {
+      icon: "bi-facebook",
+      label: "Facebook",
+      href: "https://facebook.com/share/18dZzFyrWt",
+    },
+    {
+      icon: "bi-youtube",
+      label: "YouTube",
+      href: "https://www.youtube.com/@TctFashionhub",
+    },
+    {
+      icon: "bi-envelope-fill",
+      label: "Email",
+      href: "mailto:tctfashionhub@gmail.com",
+    },
+  ];
+
   return (
     <footer className="tct-footer">
       <div className="container">
@@ -17,24 +40,24 @@ export default function Footer() {
               </span>
             </Link>
             <p className="tct-footer-tag">
-              Where threads meet tradition — boutique craft classes in the
-              heart of Coimbatore.
+              Where threads meet tradition — boutique craft classes in
+              Coimbatore.
             </p>
-            <div className="tct-social-links" aria-label="TCT Fashion Hub social links">
-              <a href="https://instagram.com/tct_fashion_hub?stkn=dmRicXg3bTZnaXJt" target="_blank" rel="noreferrer" aria-label="Instagram">
-                <i className="bi bi-instagram" />
-              </a>
-              <a href="https://facebook.com/share/18dZzFyrWt" target="_blank" rel="noreferrer" aria-label="Facebook">
-                <i className="bi bi-facebook" />
-              </a>
-              <a href="https://www.youtube.com/@TctFashionhub" target="_blank" rel="noreferrer" aria-label="YouTube">
-                <i className="bi bi-youtube" />
-              </a>
-              <a href="mailto:tctfashionhub@gmail.com" aria-label="Email TCT Fashion Hub">
-                <i className="bi bi-envelope-fill" />
-              </a>
+            <div className="tct-social-links">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={s.label}
+                >
+                  <i className={`bi ${s.icon}`} />
+                </a>
+              ))}
             </div>
           </div>
+
           <div className="col-md-4">
             <h5>Explore</h5>
             <ul className="tct-footer-links list-unstyled">
@@ -52,16 +75,27 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
           <div className="col-md-4">
             <h5>Contact</h5>
             <ul className="tct-footer-links list-unstyled">
-              <li><a href="tel:+919384846922">+91 9384846922</a></li>
-              <li><a href="https://wa.me/919384846922" target="_blank" rel="noreferrer">WhatsApp: +91 9384846922</a></li>
-              <li><a href="mailto:tctfashionhub@gmail.com">tctfashionhub@gmail.com</a></li>
-              <li>No. 215, Second Floor, Shakthi Nagar, Near ICICI Bank Ganapathy, Coimbatore - 641006.</li>
+              <li>
+                <i className="bi bi-telephone-fill me-2" />
+                <a href="tel:+919384846922">+91 93848 46922</a>
+              </li>
+              <li>
+                <i className="bi bi-envelope-fill me-2" />
+                <a href="mailto:tctfashionhub@gmail.com">tctfashionhub@gmail.com</a>
+              </li>
+              <li>
+                <i className="bi bi-geo-alt-fill me-2" />
+                No. 215, Second Floor, Shakthi Nagar, Near ICICI Bank Ganapathy,
+                Coimbatore — 641006
+              </li>
             </ul>
           </div>
         </div>
+
         <div className="tct-footer-bottom">
           <p>
             © {new Date().getFullYear()} TCT Fashion Hub. All rights reserved.

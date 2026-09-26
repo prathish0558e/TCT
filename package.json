@@ -5,8 +5,9 @@
   "private": true,
   "main": "backend/server.js",
   "scripts": {
-    "dev": "concurrently -k \"npm:dev:node\" \"npm:dev:react\"",
+    "dev": "concurrently -k -n api,py,web -c yellow,green,cyan \"npm:dev:node\" \"npm:dev:python\" \"npm:dev:react\"",
     "dev:node": "node backend/server.js",
+    "dev:python": ".venv\\Scripts\\python.exe backend/app.py",
     "dev:react": "vite",
     "build": "vite build",
     "preview": "vite preview"

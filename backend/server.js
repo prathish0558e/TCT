@@ -5,8 +5,9 @@ const path = require("path");
 const pricing = require("./data/pricing");
 
 const app = express();
-// Ignore a bogus inherited PORT (e.g. 0); use 5001 unless explicitly set
-const PORT = Number(process.env.PORT) > 0 ? Number(process.env.PORT) : 5001;
+// Ignore a bogus inherited PORT (e.g. 0); use 5000 unless explicitly set
+// (5001 is reserved for the Python Flask service, which the Vite proxy targets)
+const PORT = Number(process.env.PORT) > 0 ? Number(process.env.PORT) : 5000;
 
 app.use(cors());
 app.use(express.json());

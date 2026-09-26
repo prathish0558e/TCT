@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="row g-5 align-items-center">
             <div className="col-lg-7">
-              <p className="tct-eyebrow">Since 2012</p>
+              <p className="tct-eyebrow">Since 2021</p>
               <h2 className="tct-section-title text-start">
                 A Studio Built on Patient Hands
               </h2>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   “The teachers make every technique feel effortless — I joined
                   for tailoring and stayed for aari work.”
                 </blockquote>
-                <p className="tct-quote-by">— Priya R., student since 2023</p>
+                <p className="tct-quote-by">— Priya R., student since 2026</p>
                 <div className="tct-about-panel__logo mt-4">
                   <img
                     src="/images/Logo.jpeg"

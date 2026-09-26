@@ -92,7 +92,7 @@
         {
           id: "combo-embroidery-aari",
           name: "Embroidery + Aari Duo",
-          image: "/images/combo/embroidery-aari-duo.png",
+          image: "/images/combo/embroidery-aari.png",
           items: ["Embroidery Class", "Aari Work Class"],
           duration: "3 Months",
           level: "All levels",
@@ -102,7 +102,7 @@
         {
           id: "combo-saree-mehndi",
           name: "Saree + Mehndi Duo",
-          image: "/images/combo/saree-mehndi-duo.png",
+          image: "/images/combo/saree-mehndi.png",
           items: ["Saree Pre-Pleating", "Mehndi Class"],
           duration: "3 Months",
           level: "Beginner friendly",
@@ -112,7 +112,7 @@
         {
           id: "combo-tailoring-embroidery",
           name: "Tailoring + Embroidery Duo",
-          image: "/images/combo/tailoring-embroidery-duo.png",
+          image: "/images/combo/tailoring-embroidery.png",
           items: ["Tailoring Class", "Embroidery Class"],
           duration: "3 Months",
           level: "All levels",
@@ -122,7 +122,7 @@
         {
           id: "combo-tailoring-aari-embroidery",
           name: "Tailoring + Aari + Embroidery Trio",
-          image: "/images/combo/tailoring-aari-embroidery-trio.png",
+          image: "/images/combo/tailoring-aari-embroidery.png",
           items: ["Tailoring Class", "Aari Work Class", "Embroidery Class"],
           duration: "3 Months",
           level: "All levels",
@@ -132,7 +132,7 @@
         {
           id: "combo-saree-jewellery-resin",
           name: "Saree + Jewellery + Resin Art Trio",
-          image: "/images/combo/saree-jewellery-resin-trio.png",
+          image: "combo images/Saree + Jewellery + Resin Art Trio.png",
           items: ["Saree Pre-Pleating", "Jewellery Making", "Resin Art"],
           duration: "3 Months",
           level: "All levels",

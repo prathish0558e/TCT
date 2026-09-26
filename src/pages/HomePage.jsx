@@ -38,12 +38,42 @@ export default function HomePage() {
 
 function Hero() {
   return (
-    <header id="home" className="tct-hero">
-      <img
-        src="/images/Tct-front-background.jpeg"
-        alt="TCT Fashion Hub - Learn, Create, Grow"
-        className="tct-hero-banner"
-      />
+    <header id="home" className="tct-hero d-flex align-items-center">
+      <div className="container position-relative">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-8">
+            <p className="tct-eyebrow">Ganapathy,Coimbatore · Since 2021</p>
+            <h1 className="tct-hero-title">
+              TCT Fashion <span>Hub</span>
+            </h1>
+            <p className="tct-hero-rule" aria-hidden="true">
+              ✦
+            </p>
+            <p className="tct-hero-sub">
+              Master the art of tailoring, embroidery, aari work, jewellery,
+              mehndi, saree pre-pleating &amp; resin art — every class begins
+              with a <strong>starter kit gift</strong> just for you.
+            </p>
+            <div className="d-flex flex-wrap gap-3 mt-4">
+              <a href="#classes" className="btn tct-btn-gold tct-btn-lg">
+                View Class Pricing
+              </a>
+              <a href="#combos" className="btn tct-btn-ghost tct-btn-lg">
+                Explore Combos
+              </a>
+            </div>
+          </div>
+          <div className="col-lg-4 d-none d-lg-block text-center">
+            <div className="tct-hero-logo-frame">
+              <img
+                src="/images/Logo.jpeg"
+                alt="TCT Fashion Hub logo"
+                className="tct-hero-logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

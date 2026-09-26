@@ -2,7 +2,15 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const pricing = require("./data/pricing");
+
+// Hot-reload pricing data: re-read the module on every request so edits to
+// backend/data/pricing.js show up instantly, with NO server restart needed.
+const pricingPath = require.resolve("./data/pricing");
+const getPricing = () => {
+  delete require.cache[pricingPath];
+  return require("./data/pricing");
+};
+const pricing = getPricing();
 
 const app = express();
 // Ignore a bogus inherited PORT (e.g. 0); use 5000 unless explicitly set
@@ -18,31 +26,32 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.get("/api/studio", (_req, res) => {
-  res.json(pricing.studio);
+  res.json(getPricing().studio);
 });
 
 // Single classes
 app.get("/api/classes", (_req, res) => {
-  res.json(pricing.singleClasses);
+  res.json(getPricing().singleClasses);
 });
 
 app.get("/api/classes/:id", (req, res) => {
-  const found = pricing.singleClasses.find((c) => c.id === req.params.id);
+  const found = getPricing().singleClasses.find((c) => c.id === req.params.id);
   if (!found) return res.status(404).json({ error: "Class not found" });
   res.json(found);
 });
 
 // Combos
 app.get("/api/combos", (_req, res) => {
-  res.json(pricing.comboClasses);
+  res.json(getPricing().comboClasses);
 });
 
 // Everything the pricing page needs, in one call
 app.get("/api/pricing", (_req, res) => {
+  const p = getPricing();
   res.json({
-    studio: pricing.studio,
-    singleClasses: pricing.singleClasses,
-    comboClasses: pricing.comboClasses,
+    studio: p.studio,
+    singleClasses: p.singleClasses,
+    comboClasses: p.comboClasses,
   });
 });
 
@@ -73,6 +82,18 @@ app.get("*", (_req, res) => {
   res.sendFile(path.join(__dirname, "..", "dist", "index.html"));
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`TCT Node API + site running at http://localhost:${PORT}`);
+});
+
+// Friendly message instead of a scary crash when an old server is still running
+server.on("error", (err) => {
+  if (err && err.code === "EADDRINUSE") {
+    console.error(
+      `\n[X] Port ${PORT} already in use — an older TCT node server is still running.` +
+        `\n    Fix: close the old window (or run: taskkill /F /IM node.exe), then "npm run dev" again.\n`
+    );
+    process.exit(1);
+  }
+  throw err;
 });

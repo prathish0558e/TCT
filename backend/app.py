@@ -12,11 +12,30 @@ CORS(app)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data", "pricing.json")
 
-with open(DATA_PATH, "r", encoding="utf-8") as f:
-    DATA = json.load(f)
+DATA = None
+SINGLE_CLASSES = {}
+COMBOS = {}
 
-SINGLE_CLASSES = {c["id"]: c for c in DATA["singleClasses"]}
-COMBOS = {c["id"]: c for c in DATA["comboClasses"]}
+
+def load_data():
+    """Re-read pricing.json so data edits appear WITHOUT a restart.
+    (backend/data/pricing.js is the single source of truth;
+    pricing.json is generated from it.)"""
+    global DATA, SINGLE_CLASSES, COMBOS
+    with open(DATA_PATH, "r", encoding="utf-8") as f:
+        DATA = json.load(f)
+    SINGLE_CLASSES = {c["id"]: c for c in DATA["singleClasses"]}
+    COMBOS = {c["id"]: c for c in DATA["comboClasses"]}
+    return DATA
+
+
+load_data()  # initial load
+
+
+@app.before_request
+def _refresh_data_before_every_request():
+    """Fresh data on every API call — never serve stale prices."""
+    load_data()
 
 
 @app.get("/api/health")
@@ -140,4 +159,14 @@ def not_found(_e):
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5001, debug=False)
+    try:
+        app.run(host="127.0.0.1", port=5001, debug=False)
+    except OSError as e:
+        # Friendly message instead of a scary traceback when an old server is still running
+        if "10048" in str(e) or "in use" in str(e).lower():
+            print(
+                "\n[X] Port 5001 already in use — an older Flask service is still running."
+                "\n    Fix: close the old window (or restart your PC), then run \"npm run dev\" again.\n"
+            )
+            raise SystemExit(1)
+        raise

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { QRCodeSVG } from "qrcode.react";
 
 const WHATSAPP_NUMBER = "919384846922";
 const UPI_ID = import.meta.env.VITE_UPI_ID || "";
@@ -10,13 +12,36 @@ const whatsappPaymentLink = (course, price) =>
     `Hello TCT Fashion Hub, I would like to pay for ${course}. Price: Rs ${formatPrice(price)}. Please share the payment details.`
   )}`;
 
+/**
+ * PaymentOptions — premium payment modal.
+ * Rendered through a React PORTAL onto <body> so it always appears
+ * perfectly centered in the viewport the moment "Pay Now" is clicked,
+ * no matter where the page is scrolled (fixes the "modal lost below"
+ * bug caused by transformed card ancestors).
+ *
+ * With UPI configured (.env → VITE_UPI_ID) it also shows a scan-and-pay
+ * QR code that works with GPay, PhonePe, Paytm and every UPI app.
+ */
 export default function PaymentOptions({ course, price, onClose }) {
   const [copied, setCopied] = useState(false);
+
   const upiLink = UPI_ID
     ? `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(
         "TCT Fashion Hub"
       )}&am=${price}&cu=INR&tn=${encodeURIComponent(course)}`
     : "";
+
+  // Lock page scroll + close on Escape while the modal is open
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [onClose]);
 
   const copyUpiId = async () => {
     if (!UPI_ID) return;
@@ -24,7 +49,7 @@ export default function PaymentOptions({ course, price, onClose }) {
     setCopied(true);
   };
 
-  return (
+  return createPortal(
     <div className="tct-payment-backdrop" role="presentation" onClick={onClose}>
       <div
         className="tct-payment-dialog"
@@ -49,31 +74,61 @@ export default function PaymentOptions({ course, price, onClose }) {
           {course} <strong>Rs {formatPrice(price)}</strong>
         </p>
 
-        {UPI_ID && (
-          <a className="btn tct-btn-gold w-100" href={upiLink}>
-            <i className="bi bi-phone me-2" /> Pay with UPI app
-          </a>
-        )}
-        {UPI_ID && (
-          <button type="button" className="btn tct-btn-outline-gold w-100 mt-2" onClick={copyUpiId}>
-            <i className="bi bi-copy me-2" /> {copied ? "UPI ID copied" : `Copy UPI ID: ${UPI_ID}`}
-          </button>
-        )}
-        <a
-          className={`btn tct-btn-outline-gold w-100${UPI_ID ? " mt-2" : ""}`}
-          href={whatsappPaymentLink(course, price)}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <i className="bi bi-whatsapp me-2" /> Get payment details on WhatsApp
-        </a>
-        <a
-          className="btn tct-btn-ghost w-100 mt-2"
-          href={`mailto:tctfashionhub@gmail.com?subject=${encodeURIComponent(`Payment enquiry: ${course}`)}&body=${encodeURIComponent(`Hello TCT Fashion Hub,\n\nI would like to pay for: ${course}\nPrice: Rs ${formatPrice(price)}\n\nPlease share the payment details.`)}`}
-        >
-          <i className="bi bi-envelope me-2" /> Use email instead
-        </a>
+        <div className="tct-payment-body">
+          <div className="tct-payment-actions">
+            {UPI_ID && (
+              <a className="btn tct-btn-gold w-100" href={upiLink}>
+                <i className="bi bi-phone me-2" /> Pay with UPI app
+              </a>
+            )}
+            {UPI_ID && (
+              <button
+                type="button"
+                className="btn tct-btn-outline-gold w-100 mt-2"
+                onClick={copyUpiId}
+              >
+                <i className="bi bi-copy me-2" />{" "}
+                {copied ? "UPI ID copied" : `Copy UPI ID: ${UPI_ID}`}
+              </button>
+            )}
+            <a
+              className={`btn tct-btn-outline-gold w-100${UPI_ID ? " mt-2" : ""}`}
+              href={whatsappPaymentLink(course, price)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="bi bi-whatsapp me-2" /> Get payment details on WhatsApp
+            </a>
+            <a
+              className="btn tct-btn-ghost w-100 mt-2"
+              href={`mailto:tctfashionhub@gmail.com?subject=${encodeURIComponent(
+                `Payment enquiry: ${course}`
+              )}&body=${encodeURIComponent(
+                `Hello TCT Fashion Hub,\n\nI would like to pay for: ${course}\nPrice: Rs ${formatPrice(price)}\n\nPlease share the payment details.`
+              )}`}
+            >
+              <i className="bi bi-envelope me-2" /> Use email instead
+            </a>
+          </div>
+
+          {UPI_ID && (
+            <div className="tct-payment-qr">
+              <div className="tct-payment-qr__box">
+                <QRCodeSVG
+                  value={upiLink}
+                  size={148}
+                  bgColor="#fffdf8"
+                  fgColor="#1d1a15"
+                  level="M"
+                />
+              </div>
+              <p className="tct-payment-qr__label">Scan &amp; pay with any UPI app</p>
+              <p className="tct-payment-qr__sub">GPay · PhonePe · Paytm</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

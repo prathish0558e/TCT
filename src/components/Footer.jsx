@@ -89,13 +89,23 @@ export default function Footer() {
               </li>
               <li>
                 <i className="bi bi-geo-alt-fill me-2" />
-                No. 215, Second Floor, Shakthi Nagar, Near ICICI Bank Ganapathy,
-                Coimbatore — 641006
+                <a
+                  href="https://maps.app.goo.gl/RSYcKT7v23LzfoiL7"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="tct-maps-link"
+                >
+                  No. 215, Second Floor, Shakthi Nagar, Near ICICI Bank Ganapathy,
+                  Coimbatore — 641006
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
+        <div className="tct-footer-wordmark" aria-hidden="true">
+          TCT FASHION HUB
+        </div>
         <div className="tct-footer-bottom">
           <p>
             © {new Date().getFullYear()} TCT Fashion Hub. All rights reserved.

@@ -1,3 +1,7 @@
+import Counter from "../components/Counter.jsx";
+import Marquee from "../components/Marquee.jsx";
+import Reveal from "../components/Reveal.jsx";
+
 export default function AboutPage() {
   const values = [
     ["bi-people", "Small batches", "Every student gets personal attention, every session."],
@@ -60,13 +64,15 @@ export default function AboutPage() {
               </p>
               <div className="row g-3 mt-4">
                 {[
-                  ["500+", "Students trained"],
-                  ["7", "Crafts taught"],
-                  ["12+", "Years of experience"],
-                ].map(([num, label]) => (
+                  [500, "+", "Students trained"],
+                  [7, "", "Crafts taught"],
+                  [12, "+", "Years of experience"],
+                ].map(([num, suffix, label]) => (
                   <div className="col-4" key={label}>
                     <div className="tct-stat">
-                      <strong>{num}</strong>
+                      <strong>
+                        <Counter value={num} suffix={suffix} />
+                      </strong>
                       <span>{label}</span>
                     </div>
                   </div>
@@ -100,13 +106,15 @@ export default function AboutPage() {
             <h2 className="tct-section-title">The Studio Way</h2>
           </div>
           <div className="row g-4">
-            {values.map(([icon, title, text]) => (
+            {values.map(([icon, title, text], i) => (
               <div className="col-sm-6 col-lg-3" key={title}>
-                <div className="tct-value-card">
-                  <i className={`bi ${icon}`} />
-                  <h4>{title}</h4>
-                  <p>{text}</p>
-                </div>
+                <Reveal delay={i * 100} className="h-100">
+                  <div className="tct-value-card">
+                    <i className={`bi ${icon}`} />
+                    <h4>{title}</h4>
+                    <p>{text}</p>
+                  </div>
+                </Reveal>
               </div>
             ))}
           </div>
@@ -119,14 +127,24 @@ export default function AboutPage() {
           <p className="tct-eyebrow">Our crafts</p>
           <h2 className="tct-section-title">Seven Skills, One Studio</h2>
           <div className="tct-chips d-flex flex-wrap justify-content-center gap-2 mt-4">
-            {crafts.map((c) => (
-              <span className="tct-chip tct-chip--lg" key={c}>
-                {c}
-              </span>
+            {crafts.map((c, i) => (
+              <Reveal key={c} delay={i * 70}>
+                <span className="tct-chip tct-chip--lg">{c}</span>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
+
+      <Marquee
+        items={[
+          "Certified Courses",
+          "Basic Kit Gifts",
+          "Expert Mentors",
+          "Small Batches",
+          "Hands-on Training",
+        ]}
+      />
     </>
   );
 }

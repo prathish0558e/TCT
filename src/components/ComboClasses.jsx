@@ -4,7 +4,7 @@ import Reveal from "./Reveal.jsx";
 import TiltCard from "./TiltCard.jsx";
 
 const INDIVIDUAL_PRICES = {
-  "Tailoring Class": 6000,
+  "Tailoring Class": 8000,
   "Embroidery Class": 7000,
   "Jewellery Making": 6000,
   "Saree Pre-Pleating": 2000,
@@ -59,6 +59,12 @@ export default function ComboClasses({ combos }) {
                           <img
                             src={combo.image}
                             alt={combo.name}
+                            onError={(e) => {
+                              if (!e.currentTarget.dataset.fallback) {
+                                e.currentTarget.dataset.fallback = "1";
+                                e.currentTarget.src = "/images/placeholder.svg";
+                              }
+                            }}
                           />
                         </div>
                         <div className="card-body d-flex flex-column">

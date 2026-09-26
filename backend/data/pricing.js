@@ -56,7 +56,7 @@
           level: "Beginner friendly",
           gift: "Kit gift: organic cones, practice sheets & oils",
         },
-        {      
+        {
           id: "jewellery",
           name: "Jewellery Making",
           image: "/images/JEWLERY MAKING.jpg",
@@ -65,14 +65,24 @@
           level: "All levels",
           gift: "Kit gift: beads, findings & plier set",
         },
-
       ],
 
       comboClasses: [
         {
+          id: "combo-saree-jewellery-resin",
+          badge: "Featured Combo",
+          featured: true,
+          name: "Saree + Jewellery + Resin Art Trio",
+          image: "/images/combo/saree-jewellery-resin.png",
+          items: ["Saree Pre-Pleating", "Jewellery Making", "Resin Art"],
+          duration: "3 Months",
+          level: "All levels",
+          total: 22000,
+          gift: "Trio kit gift worth Rs 1,400",
+        },
+        {
           id: "combo-signature",
           badge: "Best Value",
-          featured: true,
           name: "Signature Combo — All 7 Crafts",
           image: "/images/combo/all-7.png",
           items: [
@@ -84,7 +94,7 @@
             "Jewellery Making",
             "Resin Art",
           ],
-          duration: "8–10 weeks",
+          duration: "3 Months",
           level: "All levels",
           total: 25000,
           gift: "Complete artisan kit gift worth Rs 3,500",
@@ -128,16 +138,6 @@
           level: "All levels",
           total: 23000,
           gift: "Trio kit gift worth Rs 1,500",
-        },
-        {
-          id: "combo-saree-jewellery-resin",
-          name: "Saree + Jewellery + Resin Art Trio",
-          image: "combo images/Saree + Jewellery + Resin Art Trio.png",
-          items: ["Saree Pre-Pleating", "Jewellery Making", "Resin Art"],
-          duration: "3 Months",
-          level: "All levels",
-          total: 22000,
-          gift: "Trio kit gift worth Rs 1,400",
         },
       ],
     };

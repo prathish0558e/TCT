@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -90,7 +91,10 @@ export default function Navbar() {
             <li className="nav-item" onClick={() => setOpen(false)}>
               {homeAnchor("#combos", "Combos")}
             </li>
-            <li className="nav-item ms-lg-3">
+            <li className="nav-item ms-lg-2 my-2 my-lg-0">
+              <ThemeToggle />
+            </li>
+            <li className="nav-item ms-lg-3 my-2 my-lg-0">
               <Link to="/enquire" className="btn tct-btn-gold tct-btn-sm-nav">
                 Enquire Now
               </Link>

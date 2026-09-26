@@ -24,10 +24,18 @@ export default function SingleClasses({ classes }) {
             <div className="col-sm-6 col-lg-4" key={c.id}>
               <Reveal delay={i * 90} shine className="h-100">
                 <TiltCard className="h-100">
-                  <article className="card tct-price-card h-100 tct-price-card--photo">
-                    <div className="tct-card-photo">
-                      <img src={c.image} alt={c.name} />
-                    </div>
+                  <article className="card tct-price-card h-100 tct-price-card--photo">                      <div className="tct-card-photo">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          onError={(e) => {
+                            if (!e.currentTarget.dataset.fallback) {
+                              e.currentTarget.dataset.fallback = "1";
+                              e.currentTarget.src = "/images/placeholder.svg";
+                            }
+                          }}
+                        />
+                      </div>
                     <div className="card-body d-flex flex-column">
                       <div className="d-flex justify-content-between align-items-start gap-2">
                         <h3 className="tct-card-title">{c.name}</h3>

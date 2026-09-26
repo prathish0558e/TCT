@@ -8,7 +8,9 @@ export default defineConfig({
     strictPort: false, // if 5173 is taken (e.g. another session), use the next free port
     proxy: {
       "/api": {
-        target: "http://localhost:5001",
+        // Node service (port 5000) reads backend/data/pricing.js — the single
+        // source of truth — so the site ALWAYS shows the real prices.
+        target: "http://localhost:5000",
         changeOrigin: true,
       },
     },

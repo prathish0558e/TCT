@@ -22,10 +22,21 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-DS674kIo.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DXzXEDMe.css">
+    <script type="module" crossorigin src="/assets/index-BaSDDZXw.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DbZ2bTCf.css">
   </head>
   <body>
+    <script>
+      // Apply saved theme before first paint so there is never a light flash.
+      (function () {
+        try {
+          var t = localStorage.getItem("tct-theme");
+          if (t === "night" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("tct-night");
+          }
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>

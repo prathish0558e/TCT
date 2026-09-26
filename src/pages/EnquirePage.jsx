@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import Confetti from "../components/Confetti.jsx";
 
 const CLASS_OPTIONS = [
   "Tailoring Class",
@@ -37,6 +38,7 @@ export default function EnquirePage() {
     message: "",
   });
   const [status, setStatus] = useState(null);
+  const [burst, setBurst] = useState(0);
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -58,6 +60,7 @@ export default function EnquirePage() {
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
+      setBurst((b) => b + 1); // fire the golden celebration
       setForm({ name: "", phone: "", interest: CLASS_OPTIONS[0], message: "" });
     } catch {
       setStatus("error");
@@ -66,6 +69,7 @@ export default function EnquirePage() {
 
   return (
     <>
+      <Confetti fireKey={burst} />
       <section className="tct-page-hero">
         <div className="container text-center">
           <img
@@ -148,10 +152,14 @@ export default function EnquirePage() {
                       : "Send Enquiry"}
                 </button>
                 {status === "sent" && (
-                  <p className="tct-form-ok mt-3">
-                    <i className="bi bi-check-circle-fill" /> Thank you! We'll
-                    be in touch shortly.
-                  </p>
+                  <div className="tct-success mt-3" role="status">
+                    <span className="tct-success__seal" aria-hidden="true">
+                      <i className="bi bi-check-lg" />
+                    </span>
+                    <p className="tct-form-ok mb-0">
+                      Thank you! We'll be in touch shortly.
+                    </p>
+                  </div>
                 )}
                 {status === "error" && (
                   <p className="tct-form-err mt-3">
@@ -181,11 +189,19 @@ export default function EnquirePage() {
                     <a href="mailto:tctfashionhub@gmail.com">tctfashionhub@gmail.com</a>
                   </li>
                   <li>
-                    <i className="bi bi-geo-alt-fill" /> No. 215, Second Floor,
-                    Shakthi Nagar, Near ICICI Bank Ganapathy, Coimbatore - 641006.
+                    <i className="bi bi-geo-alt-fill" />
+                    <a
+                      href="https://maps.app.goo.gl/RSYcKT7v23LzfoiL7"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="tct-maps-link"
+                    >
+                      No. 215, Second Floor, Shakthi Nagar, Near ICICI Bank
+                      Ganapathy, Coimbatore - 641006.
+                    </a>
                   </li>
                   <li>
-                    <i className="bi bi-clock-fill" /> Mon – Sat · 10 AM – 6 PM
+                    <i className="bi bi-clock-fill" /> Mon – Sat · 10 AM – 7 PM
                   </li>
                 </ul>
               </div>

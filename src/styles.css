@@ -138,21 +138,15 @@ body {
 
 /* ---------- Hero ---------- */
 .tct-hero {
-  min-height: 92vh;
-  background:
-    radial-gradient(ellipse at 75% 20%, rgba(185, 138, 47, 0.28), transparent 55%),
-    radial-gradient(ellipse at 15% 85%, rgba(185, 138, 47, 0.16), transparent 50%),
-    linear-gradient(160deg, #211d17 0%, #17140f 60%, #1d1a15 100%);
+  background: #0a3430;
   position: relative;
   overflow: hidden;
 }
 
-.tct-hero::before {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(231, 211, 166, 0.22);
-  pointer-events: none;
+.tct-hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .tct-hero-title {
@@ -915,7 +909,7 @@ body {
   }
 
   .tct-hero {
-    min-height: 78vh;
+    min-height: 0;
   }
 
   .tct-hero-title {

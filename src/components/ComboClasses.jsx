@@ -1,0 +1,94 @@
+import { Link } from "react-router-dom";
+
+const INDIVIDUAL_PRICES = {
+  "Tailoring Class": 6000,
+  "Embroidery Class": 7000,
+  "Jewellery Making": 6000,
+  "Saree Pre-Pleating": 2000,
+  "Mehndi Class": 4000,
+  "Aari Work Class": 7000,
+};
+
+const paymentLink = (course, price) =>
+  `mailto:tctfashionhub@gmail.com?subject=${encodeURIComponent(`Payment enquiry: ${course}`)}&body=${encodeURIComponent(`Hello TCT Fashion Hub,\n\nI would like to pay for: ${course}\nPrice: Rs ${price.toLocaleString("en-IN")}\n\nPlease share the payment details.`)}`;
+
+export default function ComboClasses({ combos }) {
+  const savingsFor = (combo) => {
+    const sum = combo.items.reduce(
+      (acc, item) => acc + (INDIVIDUAL_PRICES[item] || 0),
+      0
+    );
+    return sum > 0 ? sum - combo.total : null;
+  };
+
+  return (
+    <section id="combos" className="tct-section tct-section--dark">
+      <div className="container">
+        <div className="text-center mb-5">
+          <p className="tct-eyebrow">Save more, learn more</p>
+          <h2 className="tct-section-title">Combo Classes</h2>
+          <p className="tct-section-sub">
+            Curated bundles at special prices — bigger kits, bigger savings.
+          </p>
+        </div>
+
+        <div className="row g-4 justify-content-center">
+          {combos.map((combo) => {
+            const save = savingsFor(combo);
+            return (
+              <div
+                className={combo.featured ? "col-lg-7" : "col-md-6 col-lg-5"}
+                key={combo.id}
+              >
+                <article
+                  className={`card h-100 ${
+                    combo.featured ? "tct-combo-featured" : "tct-price-card"
+                  }`}
+                >
+                  {combo.badge && (
+                    <span className="tct-badge">{combo.badge}</span>
+                  )}
+                  <div className="card-body d-flex flex-column">
+                    <h3 className="tct-card-title">{combo.name}</h3>
+                    <p className="tct-price">
+                      <span className="tct-price__unit">Rs</span>
+                      {combo.total.toLocaleString("en-IN")}
+                    </p>
+                    {save !== null && save > 0 && (
+                      <p className="tct-save-note">
+                        <i className="bi bi-tag-fill" /> You save Rs{" "}
+                        {save.toLocaleString("en-IN")}
+                      </p>
+                    )}
+                    <ul className="tct-combo-list list-unstyled">
+                      {combo.items.map((item) => (
+                        <li key={item}>
+                          <i className="bi bi-check2" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="tct-gift-note">
+                      <i className="bi bi-gift-fill" /> {combo.gift}
+                    </p>
+                    <Link
+                      to={`/enquire?class=${encodeURIComponent(combo.name)}&price=${combo.total}&action=payment`}
+                      className={`btn mt-auto w-100 ${
+                        combo.featured ? "tct-btn-gold" : "tct-btn-outline-gold"
+                      }`}
+                      onClick={(event) => {
+                        event.preventDefault();
+                        window.location.href = paymentLink(combo.name, combo.total);
+                      }}
+                    >
+                      <i className="bi bi-credit-card me-2" /> Pay Now
+                    </Link>
+                  </div>
+                </article>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,1533 @@
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m2847[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m1:45:59 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m1:46:28 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:46:29 pm[22m [36m[1m[vite][22m[39m [32m✨ new dependencies optimized: [33mreact-router-dom[32m[39m
+[2m1:46:29 pm[22m [36m[1m[vite][22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:46:29 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:46:57 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:46:57 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/AboutPage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:11:22
+[33m  26 |  import Footer from "./components/Footer.jsx";
+  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+     |                         ^
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+  30 |  function ScrollToTop() {[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 8)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:07 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/AboutPage.jsx[22m
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:07 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:09 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:09 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:09 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:10 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:10 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:10 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:11 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:12 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:12 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:12 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:12 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:12 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\AboutPage.jsx: Unexpected token, expected "," (73:1)
+
+[0m [90m 71 |[39m                     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 72 |[39m                   [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+[31m[1m>[22m[39m[90m 73 |[39m  unverifiable[33m-[39mclaim[33m-[39mmarker[33m/[39m[33m>[39m
+ [90m    |[39m  [31m[1m^[22m[39m
+ [90m 74 |[39m                 ))}
+ [90m 75 |[39m               [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m
+ [90m 76 |[39m             [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+[2m1:47:12 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:36 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:36 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:37 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:37 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:38 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:38 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:38 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "./pages/EnquirePage.jsx" from "src/App.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/App.jsx[39m:12:24
+[33m  27 |  import HomePage from "./pages/HomePage.jsx";
+  28 |  import AboutPage from "./pages/AboutPage.jsx";
+  29 |  import EnquirePage from "./pages/EnquirePage.jsx";
+     |                           ^
+  30 |  function ScrollToTop() {
+  31 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 9)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:38 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:58 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/EnquirePage.jsx[22m
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m Pre-transform error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[39m       [36mconst[39m res [33m=[39m [36mawait[39m fetch([32m"/api/enquiries"[39m[33m,[39m {
+ [90m 39 |[39m         method[33m:[39m [32m"POST"[39m[33m,[39m
+[31m[1m>[22m[39m[90m 40 |[39m         cards[33m-[39mare[33m-[39mnot[33m-[39mreal[33m-[39mtokens[33m/[39m[33m>[39m
+ [90m    |[39m              [31m[1m^[22m[39m
+ [90m 41 |[39m       })[33m;[39m
+ [90m 42 |[39m       [36mif[39m ([33m![39mres[33m.[39mok) [36mthrow[39m [36mnew[39m [33mError[39m([32m"Request failed"[39m)[33m;[39m
+ [90m 43 |[39m       setStatus([32m"sent"[39m)[33m;[39m[0m
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:47:58 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:48:02 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:48:02 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:48:03 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:48:03 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:48:03 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:48:03 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:48:03 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\TCT Fashion\src\pages\EnquirePage.jsx: Unexpected token, expected "," (40:13)
+
+[0m [90m 38 |[31m       [36mconst[31m res [33m=[31m [36mawait[31m fetch([32m"/api/enquiries"[31m[33m,[31m {
+ [90m 39 |[31m         method[33m:[31m [32m"POST"[31m[33m,[31m
+[31m[1m>[22m[31m[90m 40 |[31m         cards[33m-[31mare[33m-[31mnot[33m-[31mreal[33m-[31mtokens[33m/[31m[33m>[31m
+ [90m    |[31m              [31m[1m^[22m[31m
+ [90m 41 |[31m       })[33m;[31m
+ [90m 42 |[31m       [36mif[31m ([33m![31mres[33m.[31mok) [36mthrow[31m [36mnew[31m [33mError[31m([32m"Request failed"[31m)[33m;[31m
+ [90m 43 |[31m       setStatus([32m"sent"[31m)[33m;[31m[0m[39m
+  Plugin: [35mvite:react-babel[39m
+  File: [36mD:/TCT Fashion/src/pages/EnquirePage.jsx[39m:40:13
+[33m  38 |        const res = await fetch("/api/enquiries", {
+  39 |          method: "POST",
+  40 |          cards-are-not-real-tokens/>
+     |               ^
+  41 |        });
+  42 |        if (!res.ok) throw new Error("Request failed");[39m
+      at constructor (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:369:19)
+      at JSXParserMixin.raise (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6622:19)
+      at JSXParserMixin.unexpected (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6642:16)
+      at JSXParserMixin.expect (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:6922:12)
+      at JSXParserMixin.parseObjectLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11856:14)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11370:23)
+      at JSXParserMixin.parseExprAtom (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:4782:20)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11107:23)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12460:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12527:17)
+      at JSXParserMixin.parseExprListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12209:18)
+      at JSXParserMixin.parseCallExpressionArguments (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11283:22)
+      at JSXParserMixin.parseCoverCallAndAsyncArrowHead (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11217:29)
+      at JSXParserMixin.parseSubscript (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11146:19)
+      at JSXParserMixin.parseSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11120:19)
+      at JSXParserMixin.parseExprSubscripts (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11111:17)
+      at JSXParserMixin.parseUpdate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11092:21)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11072:23)
+      at JSXParserMixin.parseAwait (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12312:28)
+      at JSXParserMixin.parseMaybeUnary (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:11041:25)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10925:61)
+      at JSXParserMixin.parseExprOps (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10930:23)
+      at JSXParserMixin.parseMaybeConditional (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10907:23)
+      at JSXParserMixin.parseMaybeAssign (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10857:21)
+      at D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:39
+      at JSXParserMixin.allowInAnd (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12455:16)
+      at JSXParserMixin.parseMaybeAssignAllowIn (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:10826:17)
+      at JSXParserMixin.parseVar (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13418:91)
+      at JSXParserMixin.parseVarStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13264:10)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12885:23)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+      at JSXParserMixin.parseTryStatement (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13239:23)
+      at JSXParserMixin.parseStatementContent (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12838:21)
+      at JSXParserMixin.parseStatementLike (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12801:17)
+      at JSXParserMixin.parseStatementListItem (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:12781:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13350:61)
+      at JSXParserMixin.parseBlockBody (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13343:10)
+      at JSXParserMixin.parseBlock (D:\TCT Fashion\node_modules\@babel\parser\lib\index.js:13331:10)
+[2m1:48:03 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:48:56 pm[22m [31m[1m[vite][22m[39m Pre-transform error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?
+[2m1:48:56 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:48:57 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:05 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:06 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:12 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:13 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:13 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:13 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:14 pm[22m [31m[1m[vite][22m[39m [31mInternal server error: Failed to resolve import "../components/CtaBand.jsx" from "src/pages/HomePage.jsx". Does the file exist?[39m
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mD:/TCT Fashion/src/pages/HomePage.jsx[39m:4:20
+[33m  19 |  import SingleClasses from "../components/SingleClasses.jsx";
+  20 |  import ComboClasses from "../components/ComboClasses.jsx";
+  21 |  import CtaBand from "../components/CtaBand.jsx";
+     |                       ^
+  22 |  export default function HomePage() {
+  23 |    _s();[39m
+      at TransformPluginContext._formatError (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49258:41)
+      at TransformPluginContext.error (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49253:16)
+      at normalizeUrl (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64307:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64439:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:64366:7)
+      at async PluginContainer.transform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:49099:18)
+      at async loadAndTransform (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:51978:27)
+      at async viteTransformMiddleware (file:///D:/TCT%20Fashion/node_modules/vite/dist/node/chunks/dep-BK3b2jBa.js:62106:24)
+[2m1:49:38 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Navbar.jsx[22m
+[2m1:49:38 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m1:49:38 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m1:49:55 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/SingleClasses.jsx[22m
+[2m1:49:55 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/About.jsx[22m
+[2m1:49:55 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Contact.jsx[22m
+[2m1:50:10 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ComboClasses.jsx[22m
+[2m1:50:10 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Hero.jsx[22m
+[2m1:50:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Navbar.jsx[22m
+[2m1:50:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m1:51:26 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css[22m
+[2m1:54:48 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:54:52 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:54:54 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:54:56 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:55:09 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:55:10 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:55:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/HomePage.jsx[22m
+[2m1:56:53 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m1:56:56 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m1:56:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m1:57:06 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m1:57:15 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:06:27 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/SingleClasses.jsx[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ComboClasses.jsx[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:13:58 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css[22m
+[2m2:14:29 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/vs code/dist/index.html[22m
+[2m2:14:30 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/vs code/dist/index.html[22m
+[2m2:14:35 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:14:35 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/SingleClasses.jsx[22m
+[2m2:14:35 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:14:35 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ComboClasses.jsx[22m
+[2m2:14:35 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css[22m
+[2m2:14:51 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/SingleClasses.jsx[22m
+[2m2:14:52 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ComboClasses.jsx[22m
+[2m2:18:51 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:18:51 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:18:51 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:18:51 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css[22m
+[2m2:19:01 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/vs code/dist/index.html[22m
+[2m2:19:02 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/vs code/dist/index.html[22m
+[2m2:23:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:23:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/SingleClasses.jsx[22m
+[2m2:23:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ComboClasses.jsx[22m
+[2m2:23:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:23:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/styles.css[22m
+[2m2:23:44 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/ComboClasses.jsx[22m
+[2m2:23:54 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:23:54 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/AboutPage.jsx[22m
+[2m2:23:54 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:24:11 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/AboutPage.jsx[22m
+[2m2:24:44 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/vs code/dist/index.html[22m
+[2m2:24:44 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2m.freebuff/vs code/dist/index.html[22m
+[2m2:24:45 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Footer.jsx[22m
+[2m2:24:45 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/EnquirePage.jsx[22m
+[2m2:24:45 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/AboutPage.jsx[22m

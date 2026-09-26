@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
-
-const paymentLink = (course, price) =>
-  `mailto:tctfashionhub@gmail.com?subject=${encodeURIComponent(`Payment enquiry: ${course}`)}&body=${encodeURIComponent(`Hello TCT Fashion Hub,\n\nI would like to pay for: ${course}\nPrice: Rs ${price.toLocaleString("en-IN")}\n\nPlease share the payment details.`)}`;
+import { useState } from "react";
+import PaymentOptions from "./PaymentOptions.jsx";
 
 export default function SingleClasses({ classes }) {
+  const [selectedClass, setSelectedClass] = useState(null);
+
   return (
-    <section id="classes" className="tct-section">
+    <>
+      <section id="classes" className="tct-section">
       <div className="container">
         <div className="text-center mb-5">
           <p className="tct-eyebrow">Learn a craft</p>
@@ -40,22 +41,27 @@ export default function SingleClasses({ classes }) {
                       <i className="bi bi-gift" /> {c.gift}
                     </li>
                   </ul>
-                  <Link
-                    to={`/enquire?class=${encodeURIComponent(c.name)}&price=${c.price}&action=payment`}
+                  <button
+                    type="button"
                     className="btn tct-btn-gold mt-auto w-100"
-                    onClick={(event) => {
-                      event.preventDefault();
-                      window.location.href = paymentLink(c.name, c.price);
-                    }}
+                    onClick={() => setSelectedClass(c)}
                   >
                     <i className="bi bi-credit-card me-2" /> Pay Now
-                  </Link>
+                  </button>
                 </div>
               </article>
             </div>
           ))}
         </div>
       </div>
-    </section>
+      </section>
+      {selectedClass && (
+        <PaymentOptions
+          course={selectedClass.name}
+          price={selectedClass.price}
+          onClose={() => setSelectedClass(null)}
+        />
+      )}
+    </>
   );
 }

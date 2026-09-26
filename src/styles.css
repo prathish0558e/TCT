@@ -239,6 +239,71 @@ body {
   color: #fff !important;
 }
 
+.tct-payment-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(18, 15, 10, 0.76);
+}
+
+.tct-payment-dialog {
+  position: relative;
+  width: min(100%, 430px);
+  padding: 2rem;
+  border: 1px solid rgba(185, 138, 47, 0.5);
+  background: var(--tct-ivory);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.tct-payment-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid rgba(39, 33, 24, 0.2);
+  border-radius: 50%;
+  color: var(--tct-ink);
+  background: transparent;
+}
+
+.tct-payment-close:hover {
+  color: var(--tct-gold-deep);
+  border-color: var(--tct-gold);
+}
+
+.tct-payment-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(39, 33, 24, 0.12);
+  border-bottom: 1px solid rgba(39, 33, 24, 0.12);
+}
+
+.tct-payment-summary strong {
+  color: var(--tct-gold-deep);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .tct-payment-dialog {
+    padding: 1.5rem;
+  }
+
+  .tct-payment-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
 /* ---------- Sections ---------- */
 .tct-section {
   padding: 6rem 0;

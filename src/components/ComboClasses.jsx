@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import PaymentOptions from "./PaymentOptions.jsx";
 
 const INDIVIDUAL_PRICES = {
   "Tailoring Class": 6000,
@@ -9,10 +10,9 @@ const INDIVIDUAL_PRICES = {
   "Aari Work Class": 7000,
 };
 
-const paymentLink = (course, price) =>
-  `mailto:tctfashionhub@gmail.com?subject=${encodeURIComponent(`Payment enquiry: ${course}`)}&body=${encodeURIComponent(`Hello TCT Fashion Hub,\n\nI would like to pay for: ${course}\nPrice: Rs ${price.toLocaleString("en-IN")}\n\nPlease share the payment details.`)}`;
-
 export default function ComboClasses({ combos }) {
+  const [selectedCombo, setSelectedCombo] = useState(null);
+
   const savingsFor = (combo) => {
     const sum = combo.items.reduce(
       (acc, item) => acc + (INDIVIDUAL_PRICES[item] || 0),
@@ -22,7 +22,8 @@ export default function ComboClasses({ combos }) {
   };
 
   return (
-    <section id="combos" className="tct-section tct-section--dark">
+    <>
+      <section id="combos" className="tct-section tct-section--dark">
       <div className="container">
         <div className="text-center mb-5">
           <p className="tct-eyebrow">Save more, learn more</p>
@@ -70,18 +71,15 @@ export default function ComboClasses({ combos }) {
                     <p className="tct-gift-note">
                       <i className="bi bi-gift-fill" /> {combo.gift}
                     </p>
-                    <Link
-                      to={`/enquire?class=${encodeURIComponent(combo.name)}&price=${combo.total}&action=payment`}
+                    <button
+                      type="button"
                       className={`btn mt-auto w-100 ${
                         combo.featured ? "tct-btn-gold" : "tct-btn-outline-gold"
                       }`}
-                      onClick={(event) => {
-                        event.preventDefault();
-                        window.location.href = paymentLink(combo.name, combo.total);
-                      }}
+                      onClick={() => setSelectedCombo(combo)}
                     >
                       <i className="bi bi-credit-card me-2" /> Pay Now
-                    </Link>
+                    </button>
                   </div>
                 </article>
               </div>
@@ -89,6 +87,14 @@ export default function ComboClasses({ combos }) {
           })}
         </div>
       </div>
-    </section>
+      </section>
+      {selectedCombo && (
+        <PaymentOptions
+          course={selectedCombo.name}
+          price={selectedCombo.total}
+          onClose={() => setSelectedCombo(null)}
+        />
+      )}
+    </>
   );
 }

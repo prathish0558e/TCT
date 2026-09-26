@@ -1,0 +1,79 @@
+import { useState } from "react";
+
+const WHATSAPP_NUMBER = "919384846922";
+const UPI_ID = import.meta.env.VITE_UPI_ID || "";
+
+const formatPrice = (price) => price.toLocaleString("en-IN");
+
+const whatsappPaymentLink = (course, price) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hello TCT Fashion Hub, I would like to pay for ${course}. Price: Rs ${formatPrice(price)}. Please share the payment details.`
+  )}`;
+
+export default function PaymentOptions({ course, price, onClose }) {
+  const [copied, setCopied] = useState(false);
+  const upiLink = UPI_ID
+    ? `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(
+        "TCT Fashion Hub"
+      )}&am=${price}&cu=INR&tn=${encodeURIComponent(course)}`
+    : "";
+
+  const copyUpiId = async () => {
+    if (!UPI_ID) return;
+    await navigator.clipboard.writeText(UPI_ID);
+    setCopied(true);
+  };
+
+  return (
+    <div className="tct-payment-backdrop" role="presentation" onClick={onClose}>
+      <div
+        className="tct-payment-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="payment-dialog-title"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          className="tct-payment-close"
+          aria-label="Close payment options"
+          onClick={onClose}
+        >
+          <i className="bi bi-x-lg" />
+        </button>
+        <p className="tct-eyebrow">Secure your seat</p>
+        <h2 id="payment-dialog-title" className="tct-card-title">
+          Choose payment option
+        </h2>
+        <p className="tct-payment-summary">
+          {course} <strong>Rs {formatPrice(price)}</strong>
+        </p>
+
+        {UPI_ID && (
+          <a className="btn tct-btn-gold w-100" href={upiLink}>
+            <i className="bi bi-phone me-2" /> Pay with UPI app
+          </a>
+        )}
+        {UPI_ID && (
+          <button type="button" className="btn tct-btn-outline-gold w-100 mt-2" onClick={copyUpiId}>
+            <i className="bi bi-copy me-2" /> {copied ? "UPI ID copied" : `Copy UPI ID: ${UPI_ID}`}
+          </button>
+        )}
+        <a
+          className={`btn tct-btn-outline-gold w-100${UPI_ID ? " mt-2" : ""}`}
+          href={whatsappPaymentLink(course, price)}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="bi bi-whatsapp me-2" /> Get payment details on WhatsApp
+        </a>
+        <a
+          className="btn tct-btn-ghost w-100 mt-2"
+          href={`mailto:tctfashionhub@gmail.com?subject=${encodeURIComponent(`Payment enquiry: ${course}`)}&body=${encodeURIComponent(`Hello TCT Fashion Hub,\n\nI would like to pay for: ${course}\nPrice: Rs ${formatPrice(price)}\n\nPlease share the payment details.`)}`}
+        >
+          <i className="bi bi-envelope me-2" /> Use email instead
+        </a>
+      </div>
+    </div>
+  );
+}

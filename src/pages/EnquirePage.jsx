@@ -17,6 +17,13 @@ const CLASS_OPTIONS = [
   "Saree + Jewellery + Resin Art Trio",
 ];
 
+const WHATSAPP_NUMBER = "919384846922";
+
+const whatsappEnquiryLink = (form) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    `Hello TCT Fashion Hub,\n\nNew class enquiry\nName: ${form.name}\nPhone: ${form.phone}\nInterested in: ${form.interest}\nMessage: ${form.message || "Not provided"}`
+  )}`;
+
 export default function EnquirePage() {
   const [params] = useSearchParams();
   const prefill = params.get("class") || CLASS_OPTIONS[0];
@@ -42,6 +49,7 @@ export default function EnquirePage() {
   const submit = async (e) => {
     e.preventDefault();
     setStatus("sending");
+    window.open(whatsappEnquiryLink(form), "_blank", "noopener,noreferrer");
     try {
       const res = await fetch("/api/enquiries", {
         method: "POST",

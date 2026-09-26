@@ -49,6 +49,9 @@ export default function ComboClasses({ combos }) {
                   {combo.badge && (
                     <span className="tct-badge">{combo.badge}</span>
                   )}
+                  <div className="tct-card-photo">
+                    <img src={combo.image} alt={combo.name} loading="lazy" />
+                  </div>
                   <div className="card-body d-flex flex-column">
                     <h3 className="tct-card-title">{combo.name}</h3>
                     <p className="tct-price">

@@ -20,7 +20,7 @@ export default function HomePage() {
   const [pricing, setPricing] = useState(null);
 
   useEffect(() => {
-    // Python Flask service provides the pricing data through the Vite proxy
+    // The Node API provides the pricing data through the Vite proxy
     fetch("/api/pricing")
       .then((r) => r.json())
       .then(setPricing)

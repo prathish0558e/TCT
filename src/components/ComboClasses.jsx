@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PaymentOptions from "./PaymentOptions.jsx";
+import ClassInfoModal from "./ClassInfoModal.jsx";
 import Reveal from "./Reveal.jsx";
 import TiltCard from "./TiltCard.jsx";
 
@@ -14,6 +15,7 @@ const INDIVIDUAL_PRICES = {
 
 export default function ComboClasses({ combos }) {
   const [selectedCombo, setSelectedCombo] = useState(null);
+  const [infoCombo, setInfoCombo] = useState(null);
 
   const savingsFor = (combo) => {
     const sum = combo.items.reduce(
@@ -46,11 +48,12 @@ export default function ComboClasses({ combos }) {
                   <Reveal delay={i * 90} shine className="h-100">
                     <TiltCard className="h-100">
                       <article
-                        className={`card h-100 ${
+                        className={`card h-100 tct-card-clickable ${
                           combo.featured
                             ? "tct-combo-featured"
                             : "tct-price-card"
                         }`}
+                        onClick={() => setInfoCombo(combo)}
                       >
                         {combo.badge && (
                           <span className="tct-badge">{combo.badge}</span>
@@ -89,6 +92,9 @@ export default function ComboClasses({ combos }) {
                           <p className="tct-gift-note">
                             <i className="bi bi-gift-fill" /> {combo.gift}
                           </p>
+                          <span className="tct-view-hint">
+                            <i className="bi bi-arrows-fullscreen" /> View details
+                          </span>
                           <button
                             type="button"
                             className={`btn tct-btn-shine mt-auto w-100 ${
@@ -96,7 +102,10 @@ export default function ComboClasses({ combos }) {
                                 ? "tct-btn-gold"
                                 : "tct-btn-outline-gold"
                             }`}
-                            onClick={() => setSelectedCombo(combo)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedCombo(combo);
+                            }}
                           >
                             <i className="bi bi-credit-card me-2" /> Pay Now
                           </button>
@@ -110,6 +119,16 @@ export default function ComboClasses({ combos }) {
           </div>
         </div>
       </section>
+      {infoCombo && (
+        <ClassInfoModal
+          item={infoCombo}
+          onClose={() => setInfoCombo(null)}
+          onPay={() => {
+            setInfoCombo(null);
+            setSelectedCombo(infoCombo);
+          }}
+        />
+      )}
       {selectedCombo && (
         <PaymentOptions
           course={selectedCombo.name}

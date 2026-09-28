@@ -6,6 +6,20 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: false, // if 5173 is taken (e.g. another session), use the next free port
+    // Windows-safe watcher: never choke on half-downloaded files or the
+    // large source image folders — a .crdownload file used to crash the
+    // whole dev stack with EBUSY.
+    watch: {
+      ignored: [
+        "**/*.crdownload",
+        "**/*.part",
+        "**/*.tmp",
+        "**/*.download",
+        "**/combo images/**",
+        "**/dist/**",
+        "**/backend/enquiries.json",
+      ],
+    },
     proxy: {
       "/api": {
         // Node service (port 5000) reads backend/data/pricing.js — the single

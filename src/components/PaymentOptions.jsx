@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { QRCodeSVG } from "qrcode.react";
+import { lockScroll, unlockScroll } from "../lib/scrollLock.js";
 
 const WHATSAPP_NUMBER = "919384846922";
 const UPI_ID = import.meta.env.VITE_UPI_ID || "";
@@ -33,12 +34,11 @@ export default function PaymentOptions({ course, price, onClose }) {
 
   // Lock page scroll + close on Escape while the modal is open
   useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    lockScroll();
     const onKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = prev;
+      unlockScroll();
       window.removeEventListener("keydown", onKey);
     };
   }, [onClose]);

@@ -2642,3 +2642,2120 @@ html.tct-night .tct-starfield {
     flex: 1 1 auto;
   }
 }
+
+/* ============================================================
+   CLASS INFO MODAL — premium "craft dossier" popup
+   Clicking any class / combo card opens this elegant sheet.
+   Ivory receipt surface in BOTH themes (theme-proof ink),
+   portal-rendered, closes via X / backdrop / Escape.
+   ============================================================ */
+.tct-info-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(19, 15, 9, 0.66);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: tct-backdrop-in 0.35s ease both;
+}
+.tct-info-dialog {
+  position: relative;
+  width: min(680px, 100%);
+  max-height: min(88vh, 860px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  background: linear-gradient(168deg, #fffdf8 0%, #f8efdb 100%);
+  border: 1px solid rgba(185, 138, 47, 0.5);
+  border-radius: 16px;
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  animation: tct-modal-pop 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+.tct-info-dialog::-webkit-scrollbar {
+  display: none;
+}
+.tct-info-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 6;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 253, 248, 0.94);
+  border: 1px solid rgba(185, 138, 47, 0.55);
+  color: #23201b;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.tct-info-close:hover {
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 4px rgba(185, 138, 47, 0.18);
+}
+.tct-info-photo {
+  position: relative;
+  height: clamp(190px, 30vh, 290px);
+  overflow: hidden;
+}
+.tct-info-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tct-info-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 16, 10, 0) 55%, rgba(20, 16, 10, 0.55) 100%);
+}
+.tct-info-badge {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #f3ddab, #d4a94a);
+  color: #241d12;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.tct-info-body {
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+.tct-info-body .tct-eyebrow {
+  margin-bottom: 0.35rem;
+  color: var(--tct-gold-deep) !important;
+}
+.tct-info-dialog .tct-info-title {
+  margin: 0 0 0.65rem;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  line-height: 1.15;
+  color: #23201b !important;
+}
+.tct-info-priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.tct-info-dialog .tct-price {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: currentColor;
+  color: var(--tct-gold-deep) !important;
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+.tct-info-dialog .tct-price .tct-price__unit {
+  color: inherit;
+}
+.tct-info-chip {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: #241f16;
+  color: #ecd9a8;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tct-info-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.tct-info-fact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(185, 138, 47, 0.4);
+  background: rgba(185, 138, 47, 0.08);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3c352a;
+}
+.tct-info-fact i {
+  color: var(--tct-gold-deep);
+}
+.tct-info-label {
+  margin: 0 0 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #96702a;
+}
+.tct-info-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1.2rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+.tct-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #2c261d;
+}
+.tct-info-list li i {
+  color: var(--tct-gold-deep);
+}
+.tct-info-desc {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #5c5548;
+}
+.tct-info-gift {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0 0 1.2rem;
+  padding: 0.8rem 1rem;
+  border: 1px dashed rgba(185, 138, 47, 0.55);
+  border-radius: 10px;
+  background: linear-gradient(160deg, rgba(231, 211, 166, 0.16), rgba(185, 138, 47, 0.06));
+  font-size: 0.85rem;
+  color: #4a4234;
+}
+.tct-info-gift i {
+  color: var(--tct-gold-deep);
+  margin-top: 0.1rem;
+}
+.tct-info-dialog .tct-btn-ghost {
+  color: var(--tct-gold-deep) !important;
+  border-color: rgba(185, 138, 47, 0.55);
+  background: transparent;
+}
+/* Clickable cards + "View details" hint */
+.tct-card-clickable {
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.tct-card-clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+  border-color: rgba(185, 138, 47, 0.65);
+}
+.tct-view-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tct-gold-deep);
+  opacity: 0.85;
+}
+.tct-combo-featured .tct-view-hint {
+  color: var(--tct-gold);
+}
+@media (max-width: 560px) {
+  .tct-info-body {
+    padding: 1.2rem 1.1rem 1.3rem;
+  }
+  .tct-info-list {
+    grid-template-columns: 1fr;
+  }
+  .tct-info-photo {
+    height: 190px;
+  }
+}
+
+/* ============================================================
+   PREMIUM GLASS UI LAYER
+   Frosted, layered glass surfaces that look rich in BOTH themes
+   (ivory day / warm charcoal night).
+   VISUAL ONLY — card sizes, paddings, fonts and grid alignment are
+   untouched, so the class / combo layout never moves.
+   ============================================================ */
+
+/* ---------- Glass tokens ---------- */
+:root {
+  --tct-glass: linear-gradient(152deg, rgba(255, 255, 255, 0.9), rgba(246, 239, 224, 0.74));
+  --tct-glass-soft: linear-gradient(152deg, rgba(255, 255, 255, 0.78), rgba(246, 239, 224, 0.56));
+  --tct-glass-edge: rgba(185, 138, 47, 0.26);
+  --tct-glass-shine: rgba(255, 255, 255, 0.9);
+  --tct-glass-drop: 0 14px 40px rgba(60, 48, 20, 0.1);
+  --tct-glass-drop-hi: 0 30px 66px rgba(60, 48, 20, 0.18);
+  --tct-aurora-a: rgba(185, 138, 47, 0.17);
+  --tct-aurora-b: rgba(231, 211, 166, 0.26);
+}
+html.tct-night {
+  --tct-glass: linear-gradient(152deg, rgba(50, 43, 33, 0.8), rgba(28, 24, 19, 0.74));
+  --tct-glass-soft: linear-gradient(152deg, rgba(46, 39, 30, 0.66), rgba(25, 21, 17, 0.58));
+  --tct-glass-edge: rgba(231, 211, 166, 0.2);
+  --tct-glass-shine: rgba(255, 255, 255, 0.07);
+  --tct-glass-drop: 0 16px 44px rgba(0, 0, 0, 0.5);
+  --tct-glass-drop-hi: 0 34px 74px rgba(0, 0, 0, 0.62);
+  --tct-aurora-a: rgba(185, 138, 47, 0.22);
+  --tct-aurora-b: rgba(231, 211, 166, 0.07);
+}
+
+/* ---------- Ambient aurora behind the page: gives the glass depth ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(58% 42% at 8% 2%, var(--tct-aurora-a), transparent 62%),
+    radial-gradient(54% 44% at 94% 98%, var(--tct-aurora-b), transparent 60%);
+}
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Anchor jumps clear the fixed navbar instead of hiding beneath it */
+html {
+  scroll-padding-top: 5.75rem;
+}
+
+/* ---------- Navbar: frosted glass once it condenses ---------- */
+.tct-navbar--scrolled {
+  background: rgba(20, 17, 12, 0.58);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border-bottom: 1px solid rgba(231, 211, 166, 0.22);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Glass pill nav links (replaces the thin underline) */
+.tct-nav-link::after {
+  display: none;
+}
+.tct-nav-link {
+  padding: 0.4rem 0.9rem !important;
+  border-radius: 999px;
+  transition: background 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
+}
+.tct-nav-link:hover {
+  background: rgba(231, 211, 166, 0.13);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.tct-nav-link.active {
+  background: linear-gradient(135deg, rgba(236, 213, 158, 0.95), rgba(185, 138, 47, 0.92));
+  color: #241d0e !important;
+  box-shadow: 0 8px 22px rgba(185, 138, 47, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- Buttons: deeper gold + true glass ghost ---------- */
+.tct-btn-gold {
+  background-image: linear-gradient(135deg, #e6c887 0%, #cfa149 52%, #b98a2f 100%);
+  box-shadow: 0 12px 30px rgba(185, 138, 47, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.tct-btn-gold:hover {
+  background-image: linear-gradient(135deg, #f1dba6 0%, #dcb058 52%, #c19132 100%);
+  color: #241d0e !important;
+  box-shadow: 0 18px 42px rgba(185, 138, 47, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.tct-btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(231, 211, 166, 0.42);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+.tct-btn-ghost:hover {
+  background: rgba(231, 211, 166, 0.16);
+  border-color: var(--tct-gold-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.tct-btn-outline-gold {
+  background: var(--tct-glass-soft);
+  border-color: rgba(185, 138, 47, 0.45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+html.tct-night .tct-btn-outline-gold {
+  background: var(--tct-glass-soft);
+  border-color: rgba(231, 211, 166, 0.35);
+  color: var(--tct-gold-soft) !important;
+}
+html.tct-night .tct-btn-outline-gold:hover {
+  background: var(--tct-gold);
+  color: #241d0e !important;
+}
+
+/* Visible, elegant keyboard focus for every control */
+.tct-btn-gold:focus-visible,
+.tct-btn-ghost:focus-visible,
+.tct-btn-outline-gold:focus-visible,
+.tct-theme-toggle:focus-visible,
+.tct-payment-close:focus-visible,
+.tct-info-close:focus-visible,
+.tct-nav-link:focus-visible,
+.tct-social-links a:focus-visible,
+.tct-map-wrap:focus-within,
+.form-control:focus-visible,
+.form-select:focus-visible {
+  outline: 2px solid rgba(185, 138, 47, 0.85);
+  outline-offset: 3px;
+}
+
+/* ---------- Glass surfaces: cards, stats, note card, chips ---------- */
+.tct-price-card,
+.tct-stat,
+.tct-note-card,
+.tct-chip {
+  background: var(--tct-glass);
+  border: 1px solid var(--tct-glass-edge);
+  box-shadow: var(--tct-glass-drop), inset 0 1px 0 var(--tct-glass-shine);
+}
+html.tct-night .tct-price-card,
+html.tct-night .tct-stat,
+html.tct-night .tct-note-card,
+html.tct-night .tct-chip {
+  background: var(--tct-glass);
+  border-color: var(--tct-glass-edge);
+  box-shadow: var(--tct-glass-drop), inset 0 1px 0 var(--tct-glass-shine);
+}
+.tct-price-card:hover,
+.tct-stat:hover {
+  box-shadow: var(--tct-glass-drop-hi), inset 0 1px 0 var(--tct-glass-shine);
+}
+html.tct-night .tct-price-card:hover,
+html.tct-night .tct-stat:hover {
+  box-shadow: var(--tct-glass-drop-hi), inset 0 1px 0 var(--tct-glass-shine);
+}
+/* Softer, slightly rounded couture corners (never affects layout) */
+.tct-price-card,
+.tct-combo-featured,
+.tct-stat,
+.tct-value-card,
+.tct-about-panel,
+.tct-contact-panel,
+.tct-note-card,
+.tct-map-wrap {
+  border-radius: 14px;
+}
+.tct-price-card .tct-card-photo,
+.tct-combo-featured .tct-card-photo {
+  border-radius: 13px 13px 0 0;
+}
+.tct-note-card {
+  border: 1px dashed rgba(185, 138, 47, 0.45);
+}
+html.tct-night .tct-note-card {
+  border-color: rgba(231, 211, 166, 0.28);
+}
+.tct-chip {
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+}
+html.tct-night .tct-chip {
+  color: var(--tct-gold-soft) !important;
+}
+/* Featured combo stays the deliberate dark hero card — now with a gold rim */
+.tct-combo-featured {
+  background: linear-gradient(152deg, rgba(46, 39, 29, 0.95), rgba(26, 22, 17, 0.94));
+  border: 1.5px solid rgba(185, 138, 47, 0.75);
+  box-shadow:
+    0 26px 66px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(231, 211, 166, 0.12) inset,
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.tct-combo-featured:hover {
+  box-shadow:
+    0 34px 80px rgba(0, 0, 0, 0.55),
+    0 0 34px rgba(185, 138, 47, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+/* Panels that stay intentionally dark in BOTH themes (studio voice) */
+.tct-value-card {
+  background: linear-gradient(152deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(231, 211, 166, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 18px 44px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+.tct-about-panel,
+.tct-contact-panel {
+  background: linear-gradient(152deg, rgba(52, 45, 34, 0.94), rgba(28, 24, 19, 0.92));
+  border: 1px solid rgba(185, 138, 47, 0.35);
+  box-shadow: 0 22px 54px rgba(60, 48, 20, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+.tct-map-wrap {
+  background: var(--tct-glass-soft);
+  border: 1px solid var(--tct-glass-edge);
+  box-shadow: var(--tct-glass-drop), inset 0 1px 0 var(--tct-glass-shine);
+}
+
+/* Real blur only where the GPU cost is invisible (desktop hover devices) */
+@media (hover: hover) and (min-width: 992px) {
+  .tct-price-card,
+  .tct-combo-featured,
+  .tct-stat,
+  .tct-note-card,
+  .tct-chips .tct-chip {
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+  }
+}
+
+/* ---------- Forms: frosted fields with a gold focus halo ---------- */
+.tct-form--light .form-control,
+.tct-form--light .form-select {
+  background: var(--tct-glass-soft);
+  border: 1px solid rgba(185, 138, 47, 0.28);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(60, 48, 20, 0.06);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.tct-form--light .form-control:focus,
+.tct-form--light .form-select:focus {
+  border-color: var(--tct-gold);
+  box-shadow: 0 0 0 0.22rem rgba(185, 138, 47, 0.18), inset 0 1px 3px rgba(60, 48, 20, 0.05);
+}
+html.tct-night .tct-form--light .form-control,
+html.tct-night .tct-form--light .form-select {
+  background: var(--tct-glass-soft);
+  border-color: rgba(231, 211, 166, 0.24);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+html.tct-night .tct-form--light .form-control:focus,
+html.tct-night .tct-form--light .form-select:focus {
+  border-color: var(--tct-gold);
+  box-shadow: 0 0 0 0.22rem rgba(185, 138, 47, 0.24);
+}
+
+/* Night theme keeps the custom gold chevron (specificity must beat the
+   night glass background rule above) */
+html.tct-night .tct-form--light select.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23e7d3a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.15rem center;
+  background-size: 13px 9px;
+}
+
+/* ---------- Footer: glass social pills + gold rim ---------- */
+.tct-footer {
+  border-top: 1px solid rgba(231, 211, 166, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+.tct-social-links a {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.tct-social-links a:hover {
+  box-shadow: 0 12px 26px rgba(185, 138, 47, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.tct-footer-links a {
+  display: inline-block;
+  transition: color 0.22s ease, transform 0.22s ease;
+}
+.tct-footer-links a:hover {
+  transform: translateX(4px);
+}
+.tct-maps-link:hover {
+  color: var(--tct-gold-soft);
+}
+
+/* ---------- Marquee: soft glass fade at both edges ---------- */
+.tct-marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+
+/* ============================================================
+   MODALS — theme-aware frosted glass
+   Ivory glass in day mode, warm charcoal glass at night.
+   The QR panel always keeps a light surface so every UPI app
+   can still scan it.
+   ============================================================ */
+.tct-payment-dialog,
+.tct-info-dialog {
+  background: linear-gradient(158deg, rgba(255, 253, 248, 0.95), rgba(245, 237, 222, 0.9));
+  backdrop-filter: blur(26px) saturate(165%);
+  -webkit-backdrop-filter: blur(26px) saturate(165%);
+  border: 1px solid rgba(185, 138, 47, 0.45);
+  box-shadow:
+    0 40px 110px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+html.tct-night .tct-payment-dialog,
+html.tct-night .tct-info-dialog {
+  background: linear-gradient(158deg, rgba(46, 39, 30, 0.92), rgba(22, 19, 15, 0.9));
+  border-color: rgba(231, 211, 166, 0.3);
+  box-shadow:
+    0 42px 120px rgba(0, 0, 0, 0.72),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+.tct-payment-backdrop,
+.tct-info-backdrop {
+  backdrop-filter: blur(9px) saturate(130%);
+  -webkit-backdrop-filter: blur(9px) saturate(130%);
+}
+
+/* Night-mode ink so nothing ever turns invisible on the dark glass */
+html.tct-night .tct-payment-dialog .tct-card-title,
+html.tct-night .tct-info-dialog .tct-info-title {
+  color: #f7f2e6 !important;
+}
+html.tct-night .tct-payment-dialog .tct-eyebrow,
+html.tct-night .tct-info-body .tct-eyebrow {
+  color: var(--tct-gold-soft) !important;
+}
+html.tct-night .tct-payment-dialog .tct-payment-summary {
+  color: rgba(239, 233, 220, 0.72) !important;
+  border-color: rgba(231, 211, 166, 0.18);
+}
+html.tct-night .tct-payment-dialog .tct-payment-summary strong {
+  color: var(--tct-gold-soft) !important;
+}
+html.tct-night .tct-payment-dialog .tct-payment-close,
+html.tct-night .tct-info-close {
+  color: #f4efe4;
+  border-color: rgba(231, 211, 166, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+html.tct-night .tct-payment-dialog .tct-btn-ghost,
+html.tct-night .tct-info-dialog .tct-btn-ghost {
+  color: var(--tct-gold-soft) !important;
+  border-color: rgba(231, 211, 166, 0.4);
+}
+html.tct-night .tct-payment-qr {
+  border-color: rgba(231, 211, 166, 0.28);
+  background: rgba(231, 211, 166, 0.06);
+}
+html.tct-night .tct-payment-qr__label {
+  color: #f4efe4;
+}
+html.tct-night .tct-payment-qr__sub {
+  color: var(--tct-gold-soft);
+}
+html.tct-night .tct-info-dialog .tct-price {
+  color: var(--tct-gold-soft) !important;
+}
+html.tct-night .tct-info-label {
+  color: var(--tct-gold-soft);
+}
+html.tct-night .tct-info-fact {
+  color: #ece5d6;
+  border-color: rgba(231, 211, 166, 0.3);
+  background: rgba(231, 211, 166, 0.08);
+}
+html.tct-night .tct-info-list li {
+  color: rgba(239, 233, 220, 0.9);
+}
+html.tct-night .tct-info-desc {
+  color: rgba(239, 233, 220, 0.66);
+}
+html.tct-night .tct-info-gift {
+  color: rgba(239, 233, 220, 0.82);
+  border-color: rgba(231, 211, 166, 0.35);
+  background: rgba(231, 211, 166, 0.06);
+}
+html.tct-night .tct-info-chip {
+  background: rgba(231, 211, 166, 0.92);
+  color: #241d0e;
+}
+
+/* ---------- Mobile menu: frosted glass panel ---------- */
+@media (max-width: 991px) {
+  .tct-navbar .navbar-collapse {
+    background: rgba(22, 19, 14, 0.84);
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+    border: 1px solid rgba(231, 211, 166, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .tct-nav-link {
+    display: block;
+    margin: 0.15rem 0;
+  }
+}
+
+/* ============================================================
+   LEADERSHIP — CEO & MD cards on the About page
+   Glass card + studio portrait plate, elegant in both themes.
+   ============================================================ */
+.tct-leader-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--tct-glass);
+  border: 1px solid var(--tct-glass-edge);
+  border-radius: 16px;
+  box-shadow: var(--tct-glass-drop), inset 0 1px 0 var(--tct-glass-shine);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+.tct-leader-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(185, 138, 47, 0.6);
+  box-shadow: var(--tct-glass-drop-hi), inset 0 1px 0 var(--tct-glass-shine);
+}
+html.tct-night .tct-leader-card {
+  background: var(--tct-glass);
+  border-color: var(--tct-glass-edge);
+  box-shadow: var(--tct-glass-drop), inset 0 1px 0 var(--tct-glass-shine);
+}
+.tct-leader-photo {
+  position: relative;
+  height: clamp(340px, 36vw, 430px);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(185, 138, 47, 0.3);
+  background: linear-gradient(165deg, #efe3c9, #d9c49a);
+}
+.tct-leader-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tct-leader-card:hover .tct-leader-photo img {
+  transform: scale(1.045);
+}
+.tct-leader-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 16, 10, 0) 62%,
+    rgba(20, 16, 10, 0.38) 100%
+  );
+  pointer-events: none;
+}
+.tct-leader-body {
+  position: relative;
+  padding: 1.5rem 1.6rem 1.7rem;
+  text-align: center;
+}
+.tct-leader-name {
+  font-family: var(--tct-serif);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0 0 0.4rem;
+  color: var(--tct-ink);
+}
+/* Glass role badge floating on the portrait */
+.tct-leader-role {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  z-index: 3;
+  transform: translateX(-50%);
+  margin: 0;
+  max-width: calc(100% - 26px);
+  padding: 0.44rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(238, 216, 164, 0.97),
+    rgba(185, 138, 47, 0.95)
+  );
+  color: #241d0e;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  animation: tct-badge-float 4.5s ease-in-out 1s infinite alternate;
+}
+@keyframes tct-badge-float {
+  from {
+    transform: translate(-50%, 0);
+  }
+  to {
+    transform: translate(-50%, -5px);
+  }
+}
+
+/* One-shot couture sheen that crosses the portrait on hover */
+.tct-leader-shine {
+  position: absolute;
+  top: -25%;
+  left: -45%;
+  width: 40%;
+  height: 150%;
+  z-index: 2;
+  transform: translateX(-140%) rotate(22deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 247, 224, 0.45),
+    transparent
+  );
+  filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+}
+.tct-leader-card:hover .tct-leader-shine {
+  animation: tct-leader-sheen 1.05s cubic-bezier(0.3, 0, 0.2, 1) both;
+}
+@keyframes tct-leader-sheen {
+  0% {
+    transform: translateX(-140%) rotate(22deg);
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(340%) rotate(22deg);
+    opacity: 0;
+  }
+}
+
+/* Animated gold "signature" underline under each name */
+.tct-leader-name {
+  position: relative;
+  z-index: 1;
+}
+.tct-leader-name::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 0;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--tct-gold), transparent);
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tct-leader-card:hover .tct-leader-name::after {
+  width: 88%;
+}
+
+/* Shimmer travelling along the gold rule */
+.tct-leader-rule::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.95),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: tct-rule-shimmer 3.4s 1.2s ease-in-out infinite;
+}
+@keyframes tct-rule-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  55%,
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Decorative quote watermark behind the bio */
+.tct-leader-quote {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--tct-serif);
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--tct-gold);
+  opacity: 0.07;
+  pointer-events: none;
+}
+html.tct-night .tct-leader-quote {
+  opacity: 0.1;
+}
+
+/* Staggered entrance once the card scrolls into view */
+.tct-reveal.is-visible .tct-leader-photo {
+  animation: tct-leader-in 0.85s 0.05s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tct-reveal.is-visible .tct-leader-name {
+  animation: tct-leader-in 0.85s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tct-reveal.is-visible .tct-leader-rule {
+  animation: tct-leader-in 0.85s 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.tct-reveal.is-visible .tct-leader-bio {
+  animation: tct-leader-in 0.85s 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes tct-leader-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tilt wrapper corners match the rounded glass card */
+.tct-leader-tilt .tct-tilt__inner,
+.tct-leader-tilt .tct-tilt__glare {
+  border-radius: 16px;
+}
+.tct-leader-rule {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 46px;
+  height: 1px;
+  margin: 0 auto 0.95rem;
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent, var(--tct-gold), transparent);
+}
+.tct-leader-bio {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.68;
+  color: var(--tct-ink-soft);
+}
+html.tct-night .tct-leader-name {
+  color: #f7f2e6;
+}
+/* The role badge is a solid gold pill in BOTH themes, so its ink must
+   stay dark — a gold-on-gold override would make it unreadable. */
+html.tct-night .tct-leader-role {
+  color: #241d0e;
+}
+html.tct-night .tct-leader-bio {
+  color: rgba(239, 233, 220, 0.66);
+}
+html.tct-night .tct-leader-photo {
+  border-bottom-color: rgba(231, 211, 166, 0.22);
+  background: linear-gradient(165deg, #2b2419, #1d1913);
+}
+/* Studio portraits carry a bright backdrop — calm it down at night so the
+   glass card and the gold badge stay the brightest things on the card. */
+html.tct-night .tct-leader-photo img {
+  filter: brightness(0.86) contrast(1.06) saturate(0.94);
+}
+html.tct-night .tct-leader-photo::after {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 10, 7, 0.18) 0%,
+    rgba(12, 10, 7, 0.1) 45%,
+    rgba(12, 10, 7, 0.55) 100%
+  );
+}
+@media (max-width: 767px) {
+  .tct-leader-photo {
+    height: 330px;
+  }
+  .tct-leader-body {
+    padding: 1.25rem 1.2rem 1.4rem;
+  }
+}
+
+/* ============================================================
+   LEADER CARD — INSTAGRAM LINK
+   A small glass Instagram chip hides in the top-right corner of
+   each portrait and glides into view on hover/focus (always
+   visible on touch devices where there is no hover).
+   ============================================================ */
+
+.tct-leader-insta {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-decoration: none;
+  background: linear-gradient(
+    135deg,
+    rgba(240, 148, 51, 0.92),
+    rgba(220, 39, 67, 0.92) 48%,
+    rgba(188, 24, 136, 0.92)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  transform: translate(8px, -8px) scale(0.85);
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease;
+}
+
+.tct-leader-card:hover .tct-leader-insta,
+.tct-leader-insta:focus-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  pointer-events: auto;
+}
+
+.tct-leader-insta:hover,
+.tct-leader-insta:focus-visible {
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.45),
+    0 0 0 4px rgba(255, 255, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: translate(0, 0) scale(1.08);
+}
+
+/* No hover (phones/tablets): keep it visible and tappable */
+@media (hover: none) {
+  .tct-leader-insta {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+}
+
+/* ============================================================
+   NIGHT-MODE COMPLETENESS
+   Two things used to stay stubbornly light when the theme was
+   flipped: Chrome's autofill paint and the embedded Google map.
+   ============================================================ */
+
+/* Browser autofill (saved name/phone) keeps a white/yellow box by design —
+   this repaints it in charcoal so the form never flashes light-mode. */
+html.tct-night .tct-form--light .form-control:-webkit-autofill,
+html.tct-night .tct-form--light .form-select:-webkit-autofill,
+html.tct-night .tct-form--light .form-control:-webkit-autofill:hover,
+html.tct-night .tct-form--light .form-control:-webkit-autofill:focus,
+html.tct-night .tct-form--light textarea:-webkit-autofill {
+  -webkit-text-fill-color: #efe9dc;
+  -webkit-box-shadow: 0 0 0 1000px #221e17 inset;
+  box-shadow: 0 0 0 1000px #221e17 inset;
+  caret-color: #efe9dc;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* The embedded map is always a bright tile — gently invert it at night
+   so it sits inside the dark page instead of glowing like light mode. */
+html.tct-night .tct-map-wrap iframe {
+  filter: invert(0.9) hue-rotate(180deg) saturate(0.8) brightness(0.95)
+    contrast(0.92);
+}
+
+/* Native <option> menus follow the theme too */
+html.tct-night select.form-select option,
+html.tct-night select.form-select optgroup {
+  background-color: #221e17;
+  color: #efe9dc;
+}
+
+/* ============================================================
+   FLOATING WHATSAPP BUTTON
+   One glass pill, fixed bottom-right on every page, day and
+   night. Sits BELOW the modals (payment 1050 / info 2100) so a
+   modal can always cover it, but above all normal page content.
+   ============================================================ */
+
+.tct-wa-float {
+  position: fixed;
+  right: clamp(0.9rem, 2.5vw, 1.5rem);
+  bottom: clamp(0.9rem, 2.5vw, 1.5rem);
+  z-index: 1040;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(240, 248, 242, 0.78)
+  );
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  box-shadow:
+    0 10px 26px rgba(24, 26, 20, 0.18),
+    0 0 0 5px rgba(37, 211, 102, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-decoration: none;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 0.68, 0.32, 1.2),
+    box-shadow 0.28s ease;
+}
+
+.tct-wa-float .bi-whatsapp {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: #25d366;
+  filter: drop-shadow(0 2px 5px rgba(37, 211, 102, 0.45));
+  transition: color 0.28s ease, transform 0.28s ease;
+}
+
+/* Soft breathing ring that invites the tap */
+.tct-wa-float-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.55);
+  pointer-events: none;
+  animation: tct-wa-pulse 2.6s ease-out infinite;
+}
+
+@keyframes tct-wa-pulse {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.92);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+.tct-wa-float:hover,
+.tct-wa-float:focus-visible {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow:
+    0 16px 32px rgba(24, 26, 20, 0.22),
+    0 0 0 7px rgba(37, 211, 102, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.tct-wa-float:hover .bi-whatsapp,
+.tct-wa-float:focus-visible .bi-whatsapp {
+  transform: scale(1.08);
+}
+
+.tct-wa-float:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Respect reduced-motion users: no pulsing ring */
+@media (prefers-reduced-motion: reduce) {
+  .tct-wa-float-ring {
+    animation: none;
+    opacity: 0.35;
+    transform: none;
+  }
+}
+
+/* --- Night theme: green stays, chrome goes charcoal --- */
+html.tct-night .tct-wa-float {
+  background: linear-gradient(
+    145deg,
+    rgba(30, 26, 20, 0.86),
+    rgba(20, 18, 14, 0.8)
+  );
+  border-color: rgba(37, 211, 102, 0.38);
+  box-shadow:
+    0 10px 26px rgba(0, 0, 0, 0.5),
+    0 0 0 5px rgba(37, 211, 102, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+html.tct-night .tct-wa-float:hover,
+html.tct-night .tct-wa-float:focus-visible {
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.55),
+    0 0 0 7px rgba(37, 211, 102, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+html.tct-night .tct-wa-float .bi-whatsapp {
+  color: #4be382;
+  filter: drop-shadow(0 2px 5px rgba(37, 211, 102, 0.5));
+}
+
+html.tct-night .tct-wa-float-ring {
+  border-color: rgba(75, 227, 130, 0.45);
+}
+
+/* Tiny phones: slightly smaller so it never crowds the content */
+@media (max-width: 420px) {
+  .tct-wa-float {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tct-wa-float .bi-whatsapp {
+    font-size: 1.55rem;
+  }
+}
+
+/* ============================================================
+   PREMIUM MICRO-POLISH
+   Small, theme-aware upgrades that never touch the class/combo
+   card grids (their geometry is contract-frozen).
+   ============================================================ */
+
+/* Gold buttons: dark-ink sheen sweep on hover + tactile press */
+.tct-btn-gold {
+  position: relative;
+  overflow: hidden;
+}
+.tct-btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-110%) skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(36, 29, 14, 0.18),
+    transparent
+  );
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.tct-btn-gold:hover::after {
+  transform: translateX(110%) skewX(-18deg);
+}
+.tct-btn-gold:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 4px 12px rgba(185, 138, 47, 0.3);
+}
+
+/* Keyboard focus halo in gold for every interactive control */
+.tct-btn-gold:focus-visible,
+.tct-btn-ghost:focus-visible,
+.tct-btn-outline-gold:focus-visible,
+.tct-navbar .nav-link:focus-visible,
+.tct-chip:focus-visible {
+  outline: 2px solid rgba(185, 138, 47, 0.85);
+  outline-offset: 3px;
+}
+
+/* Footer links: gold underline grows from the left on hover */
+.tct-footer a {
+  position: relative;
+  text-decoration: none;
+}
+.tct-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--tct-gold), rgba(185, 138, 47, 0.25));
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tct-footer a:hover::after,
+.tct-footer a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Craft chips: gentle gold lift on hover, respecting reduced motion */
+.tct-chip {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.tct-chip:hover {
+  transform: translateY(-3px);
+  border-color: rgba(185, 138, 47, 0.55);
+  box-shadow: 0 10px 22px rgba(185, 138, 47, 0.18);
+}
+
+/* In-copy text links: animated gold underline sweep */
+.tct-section-sub a,
+.tct-quote-by a,
+main p a:not([class]) {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(
+    90deg,
+    var(--tct-gold),
+    var(--tct-gold)
+  );
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tct-section-sub a:hover,
+.tct-quote-by a:hover,
+main p a:not([class]):hover {
+  background-size: 100% 1px;
+}
+
+/* Leader cards: subtle lifted edges on hover (photo/body visuals unchanged) */
+.tct-leader-tilt:hover .tct-leader-card {
+  border-color: rgba(185, 138, 47, 0.55);
+}
+
+/* Respect reduced-motion globally for the new polish */
+@media (prefers-reduced-motion: reduce) {
+  .tct-btn-gold::after,
+  .tct-footer a::after,
+  .tct-chip {
+    transition: none;
+  }
+  .tct-btn-gold:active {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   ENQUIRE FORM UPGRADE
+   Breathing room below the page hero, a soft entrance, and a
+   shake-and-glow nudge when "Select Class" is skipped.
+   ============================================================ */
+
+/* Space between the hero's underline and the form panel */
+.tct-page-hero + .tct-section.pt-0 .tct-form--entrance {
+  margin-top: 2.75rem;
+}
+
+/* Soft rise-in when the page loads */
+@keyframes tct-form-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.tct-form--entrance {
+  animation: tct-form-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+/* Error state: gold-red border + one gentle horizontal shake */
+.tct-form--light .form-select.tct-select-error {
+  border-color: rgba(196, 74, 44, 0.85);
+  box-shadow: 0 0 0 0.2rem rgba(196, 74, 44, 0.18);
+}
+@keyframes tct-select-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+.tct-select-error {
+  animation: tct-select-shake 0.45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tct-form--entrance {
+    animation: none;
+  }
+  .tct-select-error {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   ENQUIRE FORM — CLASSY GLASS REDESIGN
+   Softly-rounded "couture" card with gold corner ornaments,
+   pill CTA, custom gold select chevron, and matching rounded
+   side panels. Cosmetics only — layout/fields untouched.
+   ============================================================ */
+
+/* --- The card itself: deep glass with gold corner brackets --- */
+form.tct-form--light {
+  border-radius: 22px;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 253, 248, 0.94),
+    rgba(248, 241, 226, 0.86)
+  );
+  border: 1px solid rgba(185, 138, 47, 0.38);
+  box-shadow:
+    0 24px 60px rgba(60, 48, 20, 0.16),
+    0 2px 8px rgba(60, 48, 20, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  padding: 2.4rem 2.2rem;
+  position: relative;
+}
+
+/* Gold corner brackets — the "jammunu" couture detail */
+form.tct-form--light::before,
+form.tct-form--light::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+form.tct-form--light::before {
+  top: 11px;
+  left: 11px;
+  border-top: 2px solid var(--tct-gold);
+  border-left: 2px solid var(--tct-gold);
+  border-top-left-radius: 14px;
+}
+form.tct-form--light::after {
+  bottom: 11px;
+  right: 11px;
+  border-bottom: 2px solid var(--tct-gold);
+  border-right: 2px solid var(--tct-gold);
+  border-bottom-right-radius: 14px;
+}
+
+html.tct-night form.tct-form--light {
+  background: linear-gradient(
+    160deg,
+    rgba(48, 42, 32, 0.92),
+    rgba(30, 26, 20, 0.88)
+  );
+  border-color: rgba(231, 211, 166, 0.26);
+  box-shadow:
+    0 26px 60px rgba(0, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+/* --- Labels: finer, more couture spacing --- */
+.tct-form--light .form-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  margin-bottom: 0.55rem;
+}
+
+/* --- Inputs & select: deeper rounded, tactile --- */
+.tct-form--light .form-control,
+.tct-form--light .form-select {
+  border-radius: 14px;
+  padding: 0.82rem 1.05rem;
+}
+.tct-form--light .form-control:hover:not(:focus),
+.tct-form--light .form-select:hover:not(:focus) {
+  border-color: rgba(185, 138, 47, 0.6);
+}
+
+.tct-form--light textarea.form-control {
+  min-height: 128px;
+  resize: vertical;
+}
+
+/* Custom gold chevron on the select (native arrow removed) */
+.tct-form--light select.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 10'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23b98a2f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.15rem center;
+  background-size: 13px 9px;
+  padding-right: 2.9rem;
+  cursor: pointer;
+}
+
+/* --- Submit button: gold pill with soft halo --- */
+.tct-form .tct-btn-gold {
+  border-radius: 999px;
+  padding: 1.05rem 2rem;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+  box-shadow:
+    0 14px 30px rgba(185, 138, 47, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.tct-form .tct-btn-gold:disabled {
+  opacity: 0.75;
+}
+
+/* --- Side column panels: same rounded language --- */
+.tct-contact-panel {
+  border-radius: 20px;
+  box-shadow:
+    0 20px 48px rgba(20, 16, 10, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding: 2.2rem;
+}
+.tct-map-wrap {
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(60, 48, 20, 0.16);
+}
+.tct-note-card {
+  border-radius: 16px;
+  border-style: solid;
+  background: linear-gradient(
+    150deg,
+    rgba(185, 138, 47, 0.14),
+    rgba(185, 138, 47, 0.06)
+  );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+html.tct-night .tct-note-card {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Small phones: slightly tighter padding, keep the elegance */
+@media (max-width: 576px) {
+  form.tct-form--light {
+    padding: 1.8rem 1.4rem;
+    border-radius: 18px;
+  }
+  .tct-contact-panel {
+    padding: 1.7rem 1.5rem;
+  }
+}
+
+/* ============================================================
+   CHAT ASSISTANT — LOGO LAUNCHER + GOLD GLASS PANEL
+   The floating bubble carries the company logo; the panel is a
+   fully on-site assistant with typing dots, quick chips and a
+   WhatsApp handover. Sits below modals (z-index 1040).
+   ============================================================ */
+
+.tct-chat-launcher {
+  position: fixed;
+  right: clamp(0.9rem, 2.5vw, 1.5rem);
+  bottom: clamp(0.9rem, 2.5vw, 1.5rem);
+  z-index: 1040;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(185, 138, 47, 0.85);
+  background: linear-gradient(160deg, #fdf8ec, #f3e7c8);
+  box-shadow:
+    0 12px 30px rgba(20, 16, 10, 0.32),
+    0 0 0 6px rgba(185, 138, 47, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+.tct-chat-launcher:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 18px 36px rgba(20, 16, 10, 0.38),
+    0 0 0 9px rgba(185, 138, 47, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.tct-chat-launcher__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.tct-chat-launcher__ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(185, 138, 47, 0.5);
+  pointer-events: none;
+  animation: tct-wa-pulse 2.8s ease-out infinite;
+}
+.tct-chat-launcher__dot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #7dffb0, #25d366);
+  border: 2px solid #fdf8ec;
+}
+.tct-chat-launcher .bi-x-lg {
+  font-size: 1.2rem;
+  color: var(--tct-gold-deep);
+}
+.tct-chat-launcher--night {
+  background: linear-gradient(160deg, #3a3327, #241f17);
+  border-color: rgba(231, 211, 166, 0.65);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.6),
+    0 0 0 6px rgba(231, 211, 166, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.tct-chat-launcher--night .tct-chat-launcher__dot {
+  border-color: #241f17;
+}
+.tct-chat-launcher--night .bi-x-lg {
+  color: var(--tct-gold-soft);
+}
+
+/* --- Panel --- */
+.tct-chat-panel {
+  position: fixed;
+  right: clamp(0.9rem, 2.5vw, 1.5rem);
+  bottom: calc(clamp(0.9rem, 2.5vw, 1.5rem) + 74px);
+  z-index: 1040;
+  width: min(92vw, 372px);
+  height: min(560px, calc(100dvh - 140px));
+  display: flex;
+  flex-direction: column;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #fffdf8, #f6efdc);
+  border: 1px solid rgba(185, 138, 47, 0.45);
+  box-shadow:
+    0 30px 70px rgba(20, 16, 10, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition:
+    opacity 0.32s ease,
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tct-chat-panel.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.tct-chat-panel--night {
+  background: linear-gradient(165deg, #322b20, #1d1913);
+  border-color: rgba(231, 211, 166, 0.3);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Header */
+.tct-chat-panel__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(135deg, rgba(185, 138, 47, 0.16), rgba(185, 138, 47, 0.05));
+  border-bottom: 1px solid rgba(185, 138, 47, 0.3);
+}
+.tct-chat-panel__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(185, 138, 47, 0.6);
+}
+.tct-chat-panel__title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  flex: 1;
+}
+.tct-chat-panel__title strong {
+  font-family: var(--tct-serif);
+  font-size: 1rem;
+  color: var(--tct-ink);
+}
+.tct-chat-panel__title span {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #1d7a43;
+  font-weight: 600;
+}
+.tct-chat-online-dot {
+  font-size: 0.42rem;
+  vertical-align: 2px;
+  margin-right: 3px;
+}
+.tct-chat-panel--night .tct-chat-panel__title strong {
+  color: var(--tct-ivory);
+}
+.tct-chat-panel--night .tct-chat-panel__title span {
+  color: #5bd98a;
+}
+.tct-chat-panel__wa {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.tct-chat-panel__wa:hover {
+  transform: scale(1.1);
+  background: rgba(37, 211, 102, 0.2);
+}
+
+/* Messages */
+.tct-chat-panel__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(185, 138, 47, 0.4) transparent;
+}
+.tct-chat-msg {
+  max-width: 86%;
+  padding: 0.7rem 0.95rem;
+  border-radius: 16px;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  animation: tct-chat-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes tct-chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.tct-chat-msg p {
+  margin: 0 0 0.15rem;
+}
+.tct-chat-msg p:last-child {
+  margin-bottom: 0;
+}
+.tct-chat-msg p.is-bullet {
+  padding-left: 0.4rem;
+}
+.tct-chat-msg--bot {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(185, 138, 47, 0.25);
+  color: var(--tct-ink);
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 4px 14px rgba(60, 48, 20, 0.08);
+}
+.tct-chat-panel--night .tct-chat-msg--bot {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(231, 211, 166, 0.2);
+  color: var(--tct-ivory);
+}
+.tct-chat-msg--user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #d9b566, var(--tct-gold));
+  color: #241d0e;
+  font-weight: 500;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 6px 16px rgba(185, 138, 47, 0.3);
+}
+.tct-chat-msg__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #d9b566, var(--tct-gold));
+  color: #241d0e !important;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(185, 138, 47, 0.3);
+  transition: transform 0.25s ease;
+}
+.tct-chat-msg__cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Typing dots */
+.tct-chat-msg--typing {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0.8rem 1rem;
+}
+.tct-chat-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tct-gold);
+  opacity: 0.4;
+  animation: tct-chat-bounce 1.2s ease-in-out infinite;
+}
+.tct-chat-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.tct-chat-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes tct-chat-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+/* Quick chips */
+.tct-chat-panel__chips {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tct-chat-panel__chips::-webkit-scrollbar {
+  display: none;
+}
+.tct-chat-panel__chips button {
+  flex-shrink: 0;
+  border: 1px solid rgba(185, 138, 47, 0.45);
+  background: rgba(185, 138, 47, 0.08);
+  color: var(--tct-gold-deep);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.38rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.tct-chat-panel__chips button:hover {
+  background: rgba(185, 138, 47, 0.18);
+  transform: translateY(-1px);
+}
+.tct-chat-panel--night .tct-chat-panel__chips button {
+  color: var(--tct-gold-soft);
+  border-color: rgba(231, 211, 166, 0.35);
+  background: rgba(231, 211, 166, 0.07);
+}
+
+/* Input bar */
+.tct-chat-panel__input {
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.7rem 0.9rem 0.9rem;
+  border-top: 1px solid rgba(185, 138, 47, 0.25);
+}
+.tct-chat-panel__input input {
+  flex: 1;
+  border: 1px solid rgba(185, 138, 47, 0.35);
+  border-radius: 999px;
+  padding: 0.6rem 1.05rem;
+  font-size: 0.86rem;
+  background: #fff;
+  color: var(--tct-ink);
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.tct-chat-panel__input input:focus {
+  border-color: var(--tct-gold);
+  box-shadow: 0 0 0 0.2rem rgba(185, 138, 47, 0.16);
+}
+.tct-chat-panel--night .tct-chat-panel__input input {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(231, 211, 166, 0.3);
+  color: var(--tct-ivory);
+}
+.tct-chat-panel__input button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #d9b566, var(--tct-gold));
+  color: #241d0e;
+  font-size: 1rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(185, 138, 47, 0.35);
+  transition: transform 0.25s ease;
+}
+.tct-chat-panel__input button:hover {
+  transform: scale(1.08) rotate(-8deg);
+}
+
+@media (max-width: 420px) {
+  .tct-chat-launcher {
+    width: 54px;
+    height: 54px;
+  }
+  .tct-chat-launcher__logo {
+    width: 40px;
+    height: 40px;
+  }
+  .tct-chat-panel {
+    width: calc(100vw - 2.6rem);
+    height: min(520px, calc(100dvh - 120px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tct-chat-launcher__ring,
+  .tct-chat-dot,
+  .tct-chat-msg {
+    animation: none;
+  }
+  .tct-chat-panel,
+  .tct-chat-launcher {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   CLASS SELECT — ADVANCED GOLD DROPDOWN
+   Searchable, grouped (Singles / Combos) with live prices.
+   Replaces the native <select> on the enquiry form.
+   ============================================================ */
+
+.tct-class-select {
+  position: relative;
+}
+.tct-class-select__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  text-align: left;
+  background: var(--tct-glass-soft);
+  border: 1px solid rgba(185, 138, 47, 0.28);
+  border-radius: 14px;
+  padding: 0.82rem 1.05rem;
+  font-size: 1rem;
+  color: var(--tct-ink);
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.tct-class-select__trigger:hover {
+  border-color: rgba(185, 138, 47, 0.6);
+}
+.tct-class-select__trigger.has-value {
+  border-color: rgba(185, 138, 47, 0.55);
+  box-shadow: inset 0 1px 3px rgba(60, 48, 20, 0.05);
+}
+.tct-class-select__placeholder {
+  color: rgba(60, 48, 20, 0.4);
+}
+.tct-class-select__chev {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  color: var(--tct-gold-deep);
+}
+.tct-class-select__chev.is-open {
+  transform: rotate(180deg);
+}
+
+html.tct-night .tct-class-select__trigger {
+  background: var(--tct-glass-soft);
+  border-color: rgba(231, 211, 166, 0.24);
+  color: var(--tct-ivory);
+}
+html.tct-night .tct-class-select__placeholder {
+  color: rgba(239, 233, 220, 0.4);
+}
+html.tct-night .tct-class-select__chev {
+  color: var(--tct-gold-soft);
+}
+
+/* Panel */
+.tct-class-select__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(165deg, #fffdf8, #f6efdc);
+  border: 1px solid rgba(185, 138, 47, 0.45);
+  box-shadow: 0 24px 50px rgba(20, 16, 10, 0.3);
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top center;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tct-class-select__panel.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+html.tct-night .tct-class-select__panel {
+  background: linear-gradient(165deg, #322b20, #1d1913);
+  border-color: rgba(231, 211, 166, 0.3);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Search */
+.tct-class-select__search {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba(185, 138, 47, 0.22);
+  color: var(--tct-gold-deep);
+}
+html.tct-night .tct-class-select__search {
+  color: var(--tct-gold-soft);
+  border-bottom-color: rgba(231, 211, 166, 0.18);
+}
+.tct-class-select__search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.88rem;
+  color: var(--tct-ink);
+}
+html.tct-night .tct-class-select__search input {
+  color: var(--tct-ivory);
+}
+.tct-class-select__search input::placeholder {
+  color: rgba(60, 48, 20, 0.35);
+}
+html.tct-night .tct-class-select__search input::placeholder {
+  color: rgba(239, 233, 220, 0.35);
+}
+
+/* Group label + options */
+.tct-class-select__group {
+  margin: 0;
+  padding: 0.6rem 1rem 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tct-gold-deep);
+}
+html.tct-night .tct-class-select__group {
+  color: var(--tct-gold-soft);
+}
+.tct-class-select__list {
+  max-height: 264px;
+  overflow-y: auto;
+  padding-bottom: 0.4rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(185, 138, 47, 0.4) transparent;
+}
+.tct-class-select__opt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  text-align: left;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.tct-class-select__opt:hover {
+  background: rgba(185, 138, 47, 0.1);
+  border-left-color: var(--tct-gold);
+}
+.tct-class-select__opt.is-active {
+  background: rgba(185, 138, 47, 0.14);
+  border-left-color: var(--tct-gold-deep);
+}
+.tct-class-select__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tct-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+html.tct-night .tct-class-select__name {
+  color: var(--tct-ivory);
+}
+.tct-class-select__badge {
+  font-style: normal;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #241d0e;
+  background: linear-gradient(135deg, #d9b566, var(--tct-gold));
+  padding: 0.14rem 0.5rem;
+  border-radius: 999px;
+}
+.tct-class-select__price {
+  font-size: 0.72rem;
+  color: var(--tct-gold-deep);
+  font-weight: 600;
+}
+html.tct-night .tct-class-select__price {
+  color: var(--tct-gold-soft);
+}
+.tct-class-select__empty {
+  padding: 0.9rem 1rem;
+  font-size: 0.84rem;
+  color: rgba(60, 48, 20, 0.5);
+  margin: 0;
+}
+html.tct-night .tct-class-select__empty {
+  color: rgba(239, 233, 220, 0.45);
+}
+
+/* Error state mirrors the old select error */
+.tct-class-select.tct-select-error .tct-class-select__trigger {
+  border-color: rgba(196, 74, 44, 0.85);
+  box-shadow: 0 0 0 0.2rem rgba(196, 74, 44, 0.18);
+  animation: tct-select-shake 0.45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tct-class-select__panel,
+  .tct-class-select__chev {
+    transition: none;
+  }
+  .tct-class-select.tct-select-error .tct-class-select__trigger {
+    animation: none;
+  }
+}

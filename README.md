@@ -1,25 +1,23 @@
 # TCT Fashion Hub — Website
 
-A classy gold-and-ivory pricing website for **TCT Fashion Hub** (Ganapathy, Coimbatore — Since 2021), with:
+A premium gold-and-glass pricing website for **TCT Fashion Hub** (Ganapathy, Coimbatore — Since 2021), with:
 
-- **Frontend:** React 18 + Bootstrap 5 (Vite)
-- **Backend:** Node/Express API (JavaScript) + Flask pricing service (Python)
+- **Frontend:** React 18 + Bootstrap 5 (Vite) — ivory/day + night themes, glass UI
+- **Backend:** Node/Express API (JavaScript) — one backend only, no Python needed
 
 > **Single source of truth for ALL pricing/content: `backend/data/pricing.js`.**
-> `backend/data/pricing.json` is auto-generated from it and must match exactly.
-> To change any price/duration/gift: edit `pricing.js`, then run:
-> `node -e "require('fs').writeFileSync('backend/data/pricing.json', JSON.stringify(require('./backend/data/pricing.js'), null, 2) + '\n')"`
-> and restart the Flask service (it reads the JSON at startup).
+> The Node API re-reads this file on EVERY request, so editing a price shows up
+> instantly on the site — no server restart required.
 
 ## Sections
 
 - Cinematic preloader with 3D logo handoff
 - Hero with night starfield / gold dust (moon button or press **T** to toggle theme)
-- Single classes with starter-kit gifts
-- Combo classes with featured "Featured Combo" plan
-- About the studio
-- Enquiry form (WhatsApp + API) with gold confetti celebration
-- Footer with social links
+- Single classes with starter-kit gifts — click any card for the full class popup
+- Combo classes (Signature Combo — All 7 Crafts carries the featured treatment)
+- About the studio, including the leadership team (CEO & MD)
+- Enquiry form (WhatsApp + API) with a gold confetti celebration
+- Footer with social links and a tappable Google Maps address
 
 ## Class pricing (Rs) — REAL DATA (from backend/data/pricing.js)
 
@@ -43,9 +41,19 @@ A classy gold-and-ivory pricing website for **TCT Fashion Hub** (Ganapathy, Coim
 | Tailoring + Aari + Embroidery | 23,000 |
 | Saree + Jewellery + Resin Art | 22,000 |
 
+## Leadership
+
+| Name | Role |
+| --- | --- |
+| Bharath T | Chief Executive Officer (CEO) |
+| Mohanapriya K | Managing Director (MD) |
+
+Photos live in `public/images/leadership/`.
+
 ## UPI payment setup (optional)
 
-The Pay Now modal shows a **"Pay with UPI app"** button only when a UPI ID is configured.
+The Pay Now modal shows a **"Pay with UPI app"** button and a scan-and-pay QR
+only when a UPI ID is configured.
 
 1. Create a file named `.env` in the project root (next to `package.json`).
 2. Add this line with your UPI ID (Google Pay / PhonePe / any UPI app):
@@ -55,43 +63,27 @@ The Pay Now modal shows a **"Pay with UPI app"** button only when a UPI ID is co
    ```
 
    (Replace with your real UPI ID — the part after `@` depends on your bank/app.)
-3. Restart `npm run dev`. The modal will now show:
-   - **Pay with UPI app** — opens any UPI app with the amount pre-filled
-   - **Copy UPI ID** — one-tap copy for manual payment
+3. Restart `npm run dev`.
 
 Without `.env`, the modal still works — WhatsApp and Email payment options remain.
 
 ## Run it
 
-### 1. Install
-
 ```bash
 npm install
-python -m venv .venv
-.venv\Scripts\pip install -r backend/requirements.txt   # Windows
-# source .venv/bin/activate && pip install -r backend/requirements.txt  # macOS/Linux
-```
-
-### 2. Start all three services (dev)
-
-```bash
 npm run dev
 # Node API  → http://localhost:5000
-# Flask API → http://localhost:5001
-# React app → http://localhost:5173
+# React app → http://localhost:5173   (the Vite proxy sends /api to the Node API)
 ```
 
-### 3. Production build
+### Production build
 
 ```bash
 npm run build
-node backend/server.js   # serves the site + API on http://localhost:5000
+node backend/server.js   # serves the built site + API on http://localhost:5000
 ```
 
-## API endpoints
+## API endpoints (Node, port 5000)
 
-Node (port 5000): `/api/health`, `/api/studio`, `/api/classes`, `/api/combos`, `/api/pricing`, `GET/POST /api/enquiries`
-
-Python (port 5001): `/api/health`, `/api/classes`, `/api/combos`, `/api/pricing`, `/api/classes/:id`, `/api/combos/:id/summary`, `POST /api/quote`
-
-The Vite dev server proxies `/api` → Flask (5001). The enquiry form posts to the Flask-compatible endpoint on the Node server in production.
+`/api/health`, `/api/studio`, `/api/classes`, `/api/classes/:id`, `/api/combos`,
+`/api/pricing`, `GET/POST /api/enquiries`

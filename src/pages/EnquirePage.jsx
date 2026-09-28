@@ -1,22 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Confetti from "../components/Confetti.jsx";
-
-const CLASS_OPTIONS = [
-  "Tailoring Class",
-  "Embroidery Class",
-  "Jewellery Making",
-  "Saree Pre-Pleating",
-  "Mehndi Class",
-  "Aari Work Class",
-  "Resin Art",
-  "Signature Combo — All 7 Crafts",
-  "Embroidery + Aari Duo",
-  "Saree + Mehndi Duo",
-  "Tailoring + Embroidery Duo",
-  "Tailoring + Aari + Embroidery Trio",
-  "Saree + Jewellery + Resin Art Trio",
-];
+import ClassSelect from "../components/ClassSelect.jsx";
 
 const WHATSAPP_NUMBER = "919384846922";
 
@@ -27,20 +12,27 @@ const whatsappEnquiryLink = (form) =>
 
 export default function EnquirePage() {
   const [params] = useSearchParams();
-  const prefill = params.get("class") || CLASS_OPTIONS[0];
+  const prefill = params.get("class") || "";
+  const prefillDisplay = prefill || "your class";
   const paymentPrice = params.get("price");
   const isPayment = params.get("action") === "payment";
 
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    email: "",
     interest: prefill,
     message: "",
   });
   const [status, setStatus] = useState(null);
   const [burst, setBurst] = useState(0);
+  const [classError, setClassError] = useState(false);
+  const [shakeCount, setShakeCount] = useState(0);
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const onChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    if (e.target.name === "interest" && e.target.value) setClassError(false);
+  };
 
   // Keep the selected class in sync when ?class= changes
   useEffect(() => {
@@ -50,6 +42,11 @@ export default function EnquirePage() {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (!form.interest) {
+      setClassError(true);
+      setShakeCount((c) => c + 1); // replay the shake on the select
+      return;
+    }
     setStatus("sending");
     window.open(whatsappEnquiryLink(form), "_blank", "noopener,noreferrer");
     try {
@@ -61,7 +58,7 @@ export default function EnquirePage() {
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
       setBurst((b) => b + 1); // fire the golden celebration
-      setForm({ name: "", phone: "", interest: CLASS_OPTIONS[0], message: "" });
+      setForm({ name: "", phone: "", email: "", interest: "", message: "" });
     } catch {
       setStatus("error");
     }
@@ -81,7 +78,7 @@ export default function EnquirePage() {
           <h1 className="tct-page-title">Enquire About a Class</h1>
           <p className="tct-section-sub">
             {isPayment
-              ? `Complete your details to reserve ${prefill}${paymentPrice ? ` for Rs ${Number(paymentPrice).toLocaleString("en-IN")}` : ""}.`
+              ? `Complete your details to reserve ${prefillDisplay}${paymentPrice ? ` for Rs ${Number(paymentPrice).toLocaleString("en-IN")}` : ""}.`
               : "Tell us what you'd love to learn — we'll call you back with batch timings."}
           </p>
         </div>
@@ -92,7 +89,7 @@ export default function EnquirePage() {
           <div className="row g-5">
             <div className="col-lg-7">
               <form
-                className="tct-form tct-form--light"
+                className="tct-form tct-form--light tct-form--entrance"
                 onSubmit={submit}
                 noValidate
               >
@@ -118,17 +115,31 @@ export default function EnquirePage() {
                     />
                   </div>
                   <div className="col-12">
-                    <label className="form-label">Interested in</label>
-                    <select
-                      className="form-select"
+                    <label className="form-label">Email (optional)</label>
+                    <input
+                      className="form-control"
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={onChange}
+                      placeholder="you@example.com"
+                    />
+                  </div>
+                  <div className="col-12">
+                    <label className="form-label">Please select class *</label>
+                    <ClassSelect
+                      key={shakeCount}
                       name="interest"
                       value={form.interest}
                       onChange={onChange}
-                    >
-                      {CLASS_OPTIONS.map((o) => (
-                        <option key={o}>{o}</option>
-                      ))}
-                    </select>
+                      invalid={classError}
+                    />
+                    {classError && (
+                      <p className="tct-form-err mt-2 mb-0">
+                        <i className="bi bi-exclamation-circle-fill" /> Please
+                        select a class to continue.
+                      </p>
+                    )}
                   </div>
                   <div className="col-12">
                     <label className="form-label">Message</label>

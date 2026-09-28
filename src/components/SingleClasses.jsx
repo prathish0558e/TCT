@@ -1,10 +1,12 @@
 import { useState } from "react";
 import PaymentOptions from "./PaymentOptions.jsx";
+import ClassInfoModal from "./ClassInfoModal.jsx";
 import Reveal from "./Reveal.jsx";
 import TiltCard from "./TiltCard.jsx";
 
 export default function SingleClasses({ classes }) {
   const [selectedClass, setSelectedClass] = useState(null);
+  const [infoClass, setInfoClass] = useState(null);
 
   return (
     <>
@@ -24,7 +26,10 @@ export default function SingleClasses({ classes }) {
             <div className="col-sm-6 col-lg-4" key={c.id}>
               <Reveal delay={i * 90} shine className="h-100">
                 <TiltCard className="h-100">
-                  <article className="card tct-price-card h-100 tct-price-card--photo">                      <div className="tct-card-photo">
+                  <article
+                    className="card tct-price-card h-100 tct-price-card--photo tct-card-clickable"
+                    onClick={() => setInfoClass(c)}
+                  >                      <div className="tct-card-photo">
                         <img
                           src={c.image}
                           alt={c.name}
@@ -53,10 +58,16 @@ export default function SingleClasses({ classes }) {
                           <i className="bi bi-gift" /> {c.gift}
                         </li>
                       </ul>
+                      <span className="tct-view-hint">
+                        <i className="bi bi-arrows-fullscreen" /> View details
+                      </span>
                       <button
                         type="button"
                         className="btn tct-btn-gold tct-btn-shine mt-auto w-100"
-                        onClick={() => setSelectedClass(c)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedClass(c);
+                        }}
                       >
                         <i className="bi bi-credit-card me-2" /> Pay Now
                       </button>
@@ -69,6 +80,16 @@ export default function SingleClasses({ classes }) {
         </div>
       </div>
       </section>
+      {infoClass && (
+        <ClassInfoModal
+          item={infoClass}
+          onClose={() => setInfoClass(null)}
+          onPay={() => {
+            setInfoClass(null);
+            setSelectedClass(infoClass);
+          }}
+        />
+      )}
       {selectedClass && (
         <PaymentOptions
           course={selectedClass.name}

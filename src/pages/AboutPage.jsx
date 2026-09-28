@@ -1,6 +1,7 @@
 import Counter from "../components/Counter.jsx";
 import Marquee from "../components/Marquee.jsx";
 import Reveal from "../components/Reveal.jsx";
+import TiltCard from "../components/TiltCard.jsx";
 
 export default function AboutPage() {
   const values = [
@@ -18,6 +19,23 @@ export default function AboutPage() {
     "Saree Pre-Pleating",
     "Mehndi",
     "Resin Art",
+  ];
+
+  const leaders = [
+    {
+      name: "Bharath T",
+      role: "Chief Executive Officer (CEO)",
+      image: "/images/leadership/ceo-bharath.jpg",
+      instagram: "https://www.instagram.com/bharath_heeran/",
+      bio: "Bharath sets the vision and the direction of the studio — which crafts we teach, how the academy grows, and how every student is looked after from the first enquiry to the final certificate. He believes craft education in Coimbatore deserves the same polish as the finest boutique, and that learning a handmade skill should always feel like a gift.",
+    },
+    {
+      name: "Mohanapriya K",
+      role: "Managing Director (MD)",
+      image: "/images/leadership/md-mohanapriya.jpg",
+      instagram: "https://www.instagram.com/priyadcrush05/",
+      bio: "Mohanapriya runs the studio day to day — curriculum, mentor schedules, and the starter-kit programme that greets every new student. A craftsperson at heart, she keeps each batch deliberately small so that no learner is ever left without a guiding hand, and every technique is practised until it feels effortless.",
+    },
   ];
 
   return (
@@ -94,6 +112,57 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section className="tct-section tct-section--leadership">
+        <div className="container">
+          <Reveal className="text-center mb-5">
+            <p className="tct-eyebrow">Leadership</p>
+            <h2 className="tct-section-title">The People Behind the Studio</h2>
+            <p className="tct-section-sub">
+              Two people who keep every batch personal — and every craft taught
+              with care.
+            </p>
+          </Reveal>
+          <div className="row g-4 justify-content-center">
+            {leaders.map((leader, i) => (
+              <div className="col-md-6 col-lg-5" key={leader.name}>
+                <Reveal delay={i * 140} shine className="h-100">
+                  <TiltCard max={5} className="h-100 tct-leader-tilt">
+                    <article className="tct-leader-card h-100">
+                      <div className="tct-leader-photo">
+                        <img src={leader.image} alt={leader.name} />
+                        <span className="tct-leader-shine" aria-hidden="true" />
+                        {leader.instagram && (
+                          <a
+                            className="tct-leader-insta"
+                            href={leader.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${leader.name} on Instagram`}
+                            title={`${leader.name} on Instagram`}
+                          >
+                            <i className="bi bi-instagram" aria-hidden="true" />
+                          </a>
+                        )}
+                        <p className="tct-leader-role">{leader.role}</p>
+                      </div>
+                      <div className="tct-leader-body">
+                        <span className="tct-leader-quote" aria-hidden="true">
+                          &#8220;
+                        </span>
+                        <h3 className="tct-leader-name">{leader.name}</h3>
+                        <span className="tct-leader-rule" aria-hidden="true" />
+                        <p className="tct-leader-bio">{leader.bio}</p>
+                      </div>
+                    </article>
+                  </TiltCard>
+                </Reveal>
+              </div>
+            ))}
           </div>
         </div>
       </section>

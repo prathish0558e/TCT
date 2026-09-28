@@ -2,6 +2,18 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const crypto = require("crypto");
+
+require("./lib/env").loadEnv();
+const {
+  validateEnquiry,
+  saveEnquiry,
+  listEnquiries,
+  getEnquiry,
+  updateEnquiry,
+  rateLimit,
+} = require("./lib/enquiries");
+const whatsapp = require("./services/whatsapp");
 
 // Hot-reload pricing data: re-read the module on every request so edits to
 // backend/data/pricing.js show up instantly, with NO server restart needed.
@@ -13,12 +25,13 @@ const getPricing = () => {
 const pricing = getPricing();
 
 const app = express();
-// Ignore a bogus inherited PORT (e.g. 0); use 5000 unless explicitly set
-// (5001 is reserved for the Python Flask service, which the Vite proxy targets)
+// Ignore a bogus inherited PORT (e.g. 0); default to 5000.
+// This single JavaScript API is the ONLY backend — the Vite proxy targets it.
 const PORT = Number(process.env.PORT) > 0 ? Number(process.env.PORT) : 5000;
 
 app.use(cors());
-app.use(express.json());
+// Keep the raw body around for Meta webhook signature verification.
+app.use(express.json({ limit: "200kb", verify: (_req, _res, buf) => { _req.rawBody = buf; } }));
 
 // ---- API routes -----------------------------------------------------------
 app.get("/api/health", (_req, res) => {
@@ -55,26 +68,153 @@ app.get("/api/pricing", (_req, res) => {
   });
 });
 
-// Class enrolment enquiry (in-memory store, demo)
-const enquiries = [];
+// ---- Class enrolment enquiry (JSON-file store + WhatsApp automation) ------
 app.post("/api/enquiries", (req, res) => {
-  const { name, phone, message, interest } = req.body || {};
-  if (!name || !phone) {
-    return res.status(400).json({ error: "Name and phone are required." });
+  const ip = req.ip || "unknown";
+  if (!rateLimit(ip)) {
+    return res
+      .status(429)
+      .json({ ok: false, error: "Too many enquiries. Please try again later." });
   }
-  const enquiry = {
-    id: enquiries.length + 1,
-    name,
-    phone,
-    interest: interest || "Not specified",
-    message: message || "",
-    createdAt: new Date().toISOString(),
-  };
-  enquiries.push(enquiry);
-  res.status(201).json({ ok: true, enquiry });
+
+  const result = validateEnquiry(req.body || {});
+  if (!result.ok) {
+    return res
+      .status(400)
+      .json({ ok: false, error: "Validation failed", errors: result.errors });
+  }
+
+  const enquiry = saveEnquiry(result.data, { ip });
+
+  // WhatsApp automation runs in the background: a studio alert to the company
+  // number and an automatic thank-you to the customer. The form never waits
+  // for (or fails because of) WhatsApp — a 201 goes out immediately.
+  setImmediate(async () => {
+    const studio = await whatsapp.sendEnquiryNotification(enquiry);
+    const thanks = await whatsapp.sendCustomerThankYou(enquiry);
+    const stateFor = (r) =>
+      r.ok ? "sent" : r.skipped ? "not_sent" : "failed";
+    updateEnquiry(enquiry.id, {
+      whatsapp_studio_message_status: stateFor(studio),
+      studio_message_id: studio.id || "",
+      whatsapp_customer_message_status: stateFor(thanks),
+      customer_message_id: thanks.id || "",
+    });
+    console.log(
+      `[enquiry #${enquiry.id}] studio: ${stateFor(studio)}` +
+        `${studio.error ? ` (${studio.error})` : ""} | customer: ${stateFor(thanks)}` +
+        `${thanks.error ? ` (${thanks.error})` : ""}`
+    );
+  });
+
+  res.status(201).json({
+    ok: true,
+    enquiry: {
+      id: enquiry.id,
+      name: enquiry.name,
+      phone: enquiry.phone,
+      whatsapp_number: enquiry.whatsapp_number,
+      email: enquiry.email,
+      service: enquiry.service,
+      message: enquiry.message,
+      status: enquiry.status,
+      whatsapp_customer_message_status: enquiry.whatsapp_customer_message_status,
+      created_at: enquiry.created_at,
+    },
+  });
 });
 
-app.get("/api/enquiries", (_req, res) => res.json(enquiries));
+app.get("/api/enquiries", (_req, res) => res.json(listEnquiries()));
+
+app.get("/api/enquiries/:id", (req, res) => {
+  const found = getEnquiry(req.params.id);
+  if (!found) return res.status(404).json({ error: "Enquiry not found" });
+  res.json(found);
+});
+
+// ---- WhatsApp Cloud API webhook (official Meta Business Platform) ---------
+// GET: one-time verification handshake with Meta (hub.mode / verify_token /
+// hub.challenge).
+app.get("/api/whatsapp/webhook", (req, res) => {
+  const mode = req.query["hub.mode"];
+  const token = req.query["hub.verify_token"];
+  const challenge = req.query["hub.challenge"];
+  if (mode === "subscribe" && token && token === whatsapp.cfg().verifyToken) {
+    console.log("[whatsapp] webhook verified by Meta");
+    return res.status(200).send(challenge);
+  }
+  console.warn("[whatsapp] webhook verification rejected");
+  return res.sendStatus(403);
+});
+
+// POST: incoming messages + delivery status events.
+app.post("/api/whatsapp/webhook", (req, res) => {
+  // Optional but recommended: verify X-Hub-Signature-256 with the Meta app
+  // secret so nobody can fake webhook calls. Active only when
+  // WHATSAPP_APP_SECRET is set in .env.
+  const secret = process.env.WHATSAPP_APP_SECRET;
+  if (secret && req.rawBody) {
+    const expected =
+      "sha256=" +
+      crypto.createHmac("sha256", secret).update(req.rawBody).digest("hex");
+    const got = req.get("X-Hub-Signature-256") || "";
+    const okSig =
+      got.length === expected.length &&
+      crypto.timingSafeEqual(Buffer.from(got), Buffer.from(expected));
+    if (!okSig) {
+      console.warn("[whatsapp] webhook signature mismatch — rejected");
+      return res.sendStatus(401);
+    }
+  }
+
+  // ACK immediately — Meta retries slow webhooks.
+  res.sendStatus(200);
+
+  // Process safely in the background.
+  try {
+    const body = req.body || {};
+    for (const entry of body.entry || []) {
+      for (const change of entry.changes || []) {
+        const value = change.value || {};
+
+        // Delivery status events: sent / delivered / read / failed.
+        for (const st of value.statuses || []) {
+          patchEnquiryByMessageId(st.id, st.status);
+        }
+
+        // Incoming customer messages → auto-reply through the Cloud API.
+        for (const msg of value.messages || []) {
+          const contactName = value.contacts?.[0]?.profile?.name || "";
+          const parsed = whatsapp.processIncomingMessage({
+            ...msg,
+            profile: { name: contactName },
+          });
+          console.log(
+            `[whatsapp] in ← ${parsed.from}${parsed.name ? ` (${parsed.name})` : ""}: "${parsed.text}"`
+          );
+          setImmediate(() => whatsapp.sendTextMessage(parsed.from, parsed.reply));
+        }
+      }
+    }
+  } catch (e) {
+    console.error("[whatsapp] webhook processing error:", e.message);
+  }
+});
+
+// Map a Meta status event (sent/delivered/read/failed) back to its enquiry.
+function patchEnquiryByMessageId(messageId, status) {
+  if (!messageId || !status) return;
+  for (const e of listEnquiries()) {
+    if (e.studio_message_id === messageId) {
+      updateEnquiry(e.id, { whatsapp_studio_message_status: status });
+      return;
+    }
+    if (e.customer_message_id === messageId) {
+      updateEnquiry(e.id, { whatsapp_customer_message_status: status });
+      return;
+    }
+  }
+}
 
 // ---- Serve the built React app (production) -------------------------------
 app.use(express.static(path.join(__dirname, "..", "dist")));

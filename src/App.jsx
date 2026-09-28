@@ -8,12 +8,21 @@ import {
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Preloader from "./components/Preloader.jsx";
+import ChatAssistant from "./components/ChatAssistant.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import EnquirePage from "./pages/EnquirePage.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+
+  // SPA navigation must not inherit the browser's saved scroll offsets
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     // replay the page-enter animation on every navigation
@@ -30,6 +39,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Preloader />
       <Navbar />
       <main id="tct-main" className="page-enter">
@@ -41,6 +51,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <ChatAssistant />
     </BrowserRouter>
   );
 }
